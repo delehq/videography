@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T10:45:41.533516+00:00",
+  "title": "Design System: John Videography",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "action-ink": {
+        "role": "neutral",
+        "displayName": "Action Ink",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "dashboard-background": {
+        "role": "neutral",
+        "displayName": "Dashboard Background",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "dashboard-ink": {
+        "role": "neutral",
+        "displayName": "Dashboard Ink",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "dashboard-muted": {
+        "role": "neutral",
+        "displayName": "Dashboard Muted",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "dashboard-line": {
+        "role": "neutral",
+        "displayName": "Dashboard Line",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "dashboard-sidebar": {
+        "role": "neutral",
+        "displayName": "Dashboard Sidebar",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "pending-background": {
+        "role": "neutral",
+        "displayName": "Pending Background",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "pending-ink": {
+        "role": "neutral",
+        "displayName": "Pending Ink",
+        "tonalRamp": [
+          "oklch(15% 0.025 90)",
+          "oklch(26% 0.025 90)",
+          "oklch(37% 0.025 90)",
+          "oklch(48% 0.025 90)",
+          "oklch(59% 0.025 90)",
+          "oklch(70% 0.025 90)",
+          "oklch(82% 0.025 90)",
+          "oklch(95% 0.025 90)"
+        ]
+      },
+      "approved-background": {
+        "role": "neutral",
+        "displayName": "Approved Background",
+        "tonalRamp": [
+          "oklch(15% 0.04 135)",
+          "oklch(26% 0.04 135)",
+          "oklch(37% 0.04 135)",
+          "oklch(48% 0.04 135)",
+          "oklch(59% 0.04 135)",
+          "oklch(70% 0.04 135)",
+          "oklch(82% 0.04 135)",
+          "oklch(95% 0.04 135)"
+        ]
+      },
+      "approved-ink": {
+        "role": "neutral",
+        "displayName": "Approved Ink",
+        "tonalRamp": [
+          "oklch(15% 0.04 135)",
+          "oklch(26% 0.04 135)",
+          "oklch(37% 0.04 135)",
+          "oklch(48% 0.04 135)",
+          "oklch(59% 0.04 135)",
+          "oklch(70% 0.04 135)",
+          "oklch(82% 0.04 135)",
+          "oklch(95% 0.04 135)"
+        ]
+      },
+      "declined-background": {
+        "role": "neutral",
+        "displayName": "Declined Background",
+        "tonalRamp": [
+          "oklch(15% 0.04 35)",
+          "oklch(26% 0.04 35)",
+          "oklch(37% 0.04 35)",
+          "oklch(48% 0.04 35)",
+          "oklch(59% 0.04 35)",
+          "oklch(70% 0.04 35)",
+          "oklch(82% 0.04 35)",
+          "oklch(95% 0.04 35)"
+        ]
+      },
+      "declined-ink": {
+        "role": "neutral",
+        "displayName": "Declined Ink",
+        "tonalRamp": [
+          "oklch(15% 0.04 35)",
+          "oklch(26% 0.04 35)",
+          "oklch(37% 0.04 35)",
+          "oklch(48% 0.04 35)",
+          "oklch(59% 0.04 35)",
+          "oklch(70% 0.04 35)",
+          "oklch(82% 0.04 35)",
+          "oklch(95% 0.04 35)"
+        ]
+      },
+      "source-black": {
+        "role": "neutral",
+        "displayName": "Source Black",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "source-surface": {
+        "role": "neutral",
+        "displayName": "Source Media Surface",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "source-line": {
+        "role": "neutral",
+        "displayName": "Source Inquiry Line",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "source-cover": {
+        "role": "neutral",
+        "displayName": "Source Difference Cover",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Final cascading hero title."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "About editorial heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Booking section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Public supporting text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact section annotations."
+      },
+      "reference-heading": {
+        "displayName": "Reference Heading",
+        "purpose": "Intentional source addition: Work and contact headings."
+      },
+      "reference-inquiry": {
+        "displayName": "Reference Inquiry",
+        "purpose": "Intentional source addition: contact inquiry links."
+      },
+      "reference-support": {
+        "displayName": "Reference Support",
+        "purpose": "Intentional source addition: Work/contact supporting text."
+      },
+      "reference-table-label": {
+        "displayName": "Reference Table Label",
+        "purpose": "Intentional source addition: Project / Client / Category labels."
+      },
+      "reference-caption": {
+        "displayName": "Reference Caption",
+        "purpose": "Intentional source addition: preview caption and contact annotations."
+      },
+      "reference-editorial-body": {
+        "displayName": "Reference Editorial Body",
+        "purpose": "Intentional source addition: 16px editorial panel copy."
+      },
+      "reference-navigation": {
+        "displayName": "Reference Navigation",
+        "purpose": "Intentional source addition: 12.8px bold public header links."
+      },
+      "reference-tile-title": {
+        "displayName": "Reference Tile Title",
+        "purpose": "Intentional source addition: 18px Works overlay titles."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "smooth-scroll",
+        "value": "0.9s; 1 - (1 - t)^3",
+        "purpose": "Lenis duration and cubic ease; bypassed for reduced motion."
+      },
+      {
+        "name": "menu-reveal",
+        "value": ".65s cubic-bezier(.76,0,.24,1)",
+        "purpose": "Clipped full-screen menu."
+      },
+      {
+        "name": "preview-crossfade",
+        "value": ".45s",
+        "purpose": "Selected-work opacity and scale."
+      },
+      {
+        "name": "film-color",
+        "value": ".8s",
+        "purpose": "Grayscale-to-color video hover."
+      },
+      {
+        "name": "reveal",
+        "value": "1.1s expo.out",
+        "purpose": "GSAP clipped entry reveal; reduced-motion bypass."
+      },
+      {
+        "name": "cloud-damping",
+        "value": ".08",
+        "purpose": "OrbitControls damping."
+      },
+      {
+        "name": "roll-smoothing",
+        "value": ".07",
+        "purpose": "Input-driven opposing tracks; .07 per nominal 60Hz frame, corrected for elapsed time."
+      },
+      {
+        "name": "panel-stack",
+        "value": "pinSpacing:false; scale 1 ? .92",
+        "purpose": "Prior panel pins until next top reaches viewport top; long panels (>1.02 viewport heights) begin at bottom bottom, short panels at top top. Scale scrubs while next moves top bottom to top top. Preserve DOM order without artificial panel/pin-spacer z-indexes; pale cover must difference-blend through the pinned cloud."
+      },
+      {
+        "name": "roll-input",
+        "value": "wheel .30; drag/touch 1.3",
+        "purpose": "Terminal footer consumes section-wide input; tracks repeat three copies in opposing directions."
+      },
+      {
+        "name": "roll-reverse-release",
+        "value": "min(220px, 22vh)",
+        "purpose": "Accumulated reverse input first reverses gallery, then subsequent reverse input releases document scroll. User-observation threshold, not an extracted reference constant; Home/Escape also exit."
+      },
+      {
+        "name": "source-interludes",
+        "value": "full-viewport film interlude before photo cloud; pale interlude before Work",
+        "purpose": "Source-order restoration: empty film-interlude.scroll-panel matches .panel.reel with rgba(27,14,14,.306), mix-blend-mode:difference. Film interlude is hidden under reduced motion. These transitions preserve the reference stack sequence rather than adding a new visual direction. Pale #f0f0f0 cover difference-blends to retain inverted cloud imagery and text."
+      },
+      {
+        "name": "progressive-route-loader",
+        "value": "500ms delay; decoded tile/120ms; minimum 2s; .45s sweep; .25s fade at .3s; 7s failsafe",
+        "purpose": "Initially black image-free markup; remounted per public route; reduced-motion bypass; dashboard immediate."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "intermediate",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "650px"
+      },
+      {
+        "name": "contact-type",
+        "value": "1100px"
+      },
+      {
+        "name": "contact-column",
+        "value": "991px"
+      }
+    ],
+    "referenceTypography": {
+      "status": "intentional source-derived additions",
+      "source": "src/app/scroll-sections.css",
+      "values": {
+        "headings": "63px",
+        "inquiry": "33px",
+        "support": "15px",
+        "tableLabels": "13px",
+        "captions": "12px",
+        "editorialBody": "16px",
+        "navigation": "12.8px",
+        "tileTitle": "18px"
+      },
+      "responsive": "1100px, 991px and 650px overrides follow the source; do not normalize these additions as drift."
+    },
+    "referencePages": {
+      "services": "Single-word hero and lower biography; pinned film roll with narrative; category WorkBoard; pale transition; plain footer. Roll reverts on route cleanup and becomes static for reduced motion.",
+      "stories": "Three viewport media-left/copy-right panels and editorial footer.",
+      "contact": "About and Process editorial panels followed by media/contact footer.",
+      "works": "Square auto-fill 280px grid, 320px at 1600px; two mobile columns; overlaid category/title; own working filters; visually hidden title; direct project links; no gallery footer.",
+      "home": "Retains input-driven opposing gallery footer.",
+      "viewer": "Body portal, native controls and mute keyboard access, bounded focus, Escape, inert background, scroll lock and trigger focus restoration.",
+      "limits": "Seven illustrative projects and temporary reference assets; no live frame parity certification. Page audit and home gallery regression passed with zero errors; final production build passed."
+    }
+  },
+  "components": [
+    {
+      "name": "Public Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pale rectangular inquiry action.",
+      "html": "<button class=\"ds-primary\">Continue <span aria-hidden=\"true\">?</span></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:25px;background:#e6e6e6;color:#111;border:0;border-radius:0;padding:16px 22px;min-height:48px;font:12px Arimo,Arial,sans-serif;cursor:pointer;transition:background .2s}.ds-primary:hover{background:#fff}.ds-primary:focus-visible{outline:2px solid currentColor;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Dashboard Primary Action",
+      "kind": "button",
+      "refersTo": "button-dashboard",
+      "description": "Dark action on the light operational surface.",
+      "html": "<button class=\"ds-studio\">Save changes</button>",
+      "css": ".ds-studio{background:#242420;color:#fff;border:0;border-radius:0;padding:16px 22px;min-height:48px;font:12px Inter,Arial,sans-serif;cursor:pointer}.ds-studio:hover{background:#242420}.ds-studio:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Outline Action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Fine rectangular secondary dashboard control.",
+      "html": "<button class=\"ds-outline\">Edit details</button>",
+      "css": ".ds-outline{background:transparent;color:inherit;border:1px solid #bcbdb2;padding:12px 15px;font:11px Inter,Arial,sans-serif;cursor:pointer}.ds-outline:hover{background:transparent}.ds-outline:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Public Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Transparent underline field with persistent label.",
+      "html": "<label class=\"ds-field\">Your name<input placeholder=\"Your full name\" /></label>",
+      "css": ".ds-field{display:block;background:var(--bg,#0d0d0d);color:var(--ink,#ededed);padding:20px;font:12px Arimo,Arial,sans-serif}.ds-field input{display:block;width:100%;border:0;border-bottom:1px solid #555;border-radius:0;background:transparent;color:inherit;padding:15px 0;margin:5px 0 25px;font:14px Arimo,Arial,sans-serif}.ds-field input:focus{outline:none;border-color:#eee}.ds-field input::placeholder{color:#999;opacity:1}"
+    },
+    {
+      "name": "Pending Status",
+      "kind": "chip",
+      "refersTo": "status-pending",
+      "description": "Functional text-and-tint status indicator.",
+      "html": "<span class=\"ds-status\">Pending</span>",
+      "css": ".ds-status{display:inline-block;background:#e9e3d1;color:#665323;padding:5px 9px;border-radius:3px;font:10px Inter,Arial,sans-serif;text-transform:capitalize}"
+    },
+    {
+      "name": "Compact Public Navigation",
+      "kind": "nav",
+      "description": "White source header links over a dark gradient; outer header is pointer-transparent, interactive elements receive events.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a href=\"#works\">// Works</a><a href=\"#stories\">// Stories</a><button>Menu +</button></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;align-items:start;background:linear-gradient(180deg,#0000008a,transparent);color:#fff;padding:24px;font:700 12.8px/1.2 Arimo,Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}.ds-nav a{color:inherit;text-decoration:none;transition:opacity .2s}.ds-nav a:hover{opacity:.55}.ds-nav button{background:transparent;color:inherit;border:0;padding:0;font:inherit;text-transform:uppercase;cursor:pointer}.ds-nav a:focus-visible{outline:2px solid currentColor;outline-offset:5px}.ds-nav button:focus-visible{outline:2px solid currentColor;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav{transition:none}}"
+    },
+    {
+      "name": "Service Choice Panel",
+      "kind": "card",
+      "description": "Selected flat service choice, without an elevated card shell.",
+      "html": "<button class=\"ds-choice\" aria-pressed=\"true\"><span>Weddings</span><p>Your day, thoughtfully captured.</p></button>",
+      "css": ".ds-choice{display:block;text-align:left;min-height:145px;padding:22px 18px;border:1px solid #e3e3e3;background:#e3e3e3;color:#111;font-family:Arimo,Arial,sans-serif;cursor:pointer}.ds-choice span{font-size:19px}.ds-choice p{font-size:11px;line-height:1.5;margin:10px 0 0;max-width:150px}.ds-choice:hover{background:#e3e3e3}.ds-choice:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Selected Work Table",
+      "kind": "custom",
+      "description": "Desktop source composition: 4:3 preview, minimum 650px height, and three-column table. Responsive client hiding occurs at 991px.",
+      "html": "<section class=\"ds-work\"><h2>Work</h2><div class=\"ds-row ds-head\"><span>Project</span><span>Client</span><span>Category</span></div><a class=\"ds-row\" href=\"#project\"><span>Selected film</span><span>?</span><span>Film</span></a></section>",
+      "css": ".ds-work{background:#0d0d0d;color:#ededed;padding:24px;font-family:Arimo,Arial,sans-serif}.ds-work h2{font:700 63px/1 Inter,Arial,sans-serif;margin:0 0 24px}.ds-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(100px,.7fr);gap:18px;padding:8px 0;font-size:15px;line-height:1.25;color:inherit;text-decoration:none;transition:background .45s,color .45s}.ds-row span:nth-child(2){text-align:center}.ds-row span:last-child{text-align:right}.ds-head{padding:16px 0 25px;font-size:13px;font-weight:700;letter-spacing:.04em}a.ds-row:hover{background:#ededed;color:#111}a.ds-row:focus-visible{outline:2px solid currentColor;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-row{transition:none}}"
+    },
+    {
+      "name": "Contact Film Tracks",
+      "kind": "custom",
+      "description": "Full viewport desktop 4:8 copy/gallery split. Two opposing three-copy 16:9 tracks contain media; DOM anchors remain targets beneath pointer-transparent WebGL. Static scrollable links under reduced motion.",
+      "html": "<section class=\"ds-contact\"><div><h2>Let?s Talk</h2><p>Have a project in mind?</p><a href=\"#inquiry\">Get in touch</a><small>Explore selected films</small></div><div class=\"ds-tracks\"><a href=\"#film\">Selected film</a><a href=\"#film-two\">Another film</a></div></section>",
+      "css": ".ds-contact{display:grid;grid-template-columns:4fr 8fr;gap:0;background:#090909;color:#ededed;padding:24px;font:15px/1.4 Arimo,Arial,sans-serif}.ds-contact h2{font:700 63px/1 Inter,Arial,sans-serif;margin:0}.ds-contact p{margin-top:7px}.ds-contact a{color:inherit;font-size:33px;line-height:1.3;text-decoration:none;border-bottom:1px solid #1c1c1c}.ds-contact a:hover{border-color:currentColor}.ds-contact a:focus-visible{outline:2px solid currentColor;outline-offset:5px}.ds-contact small{display:block;font-size:12px;line-height:1.6;margin-top:25px}.ds-tracks{padding-left:90px;display:grid;grid-template-columns:1fr 1fr;gap:1vw;overflow:hidden}.ds-tracks a{display:grid;place-items:center;aspect-ratio:16/9;font-size:12px;border:1px solid #333}@media(prefers-reduced-motion:reduce){.ds-tracks{overflow:auto}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cinematic Editorial Portfolio",
+    "overview": "The visual authority is the user's chosen reference, thomasmamfredas.com. Preserve its monochrome film-led composition, compact navigation, large typography, asymmetric media arrangements, and smooth spatial motion while substituting John's identity. This is a code-led replication: no separate build specification or approved composition exists.\n\nThis document records the source-aligned implementation and its provisional fidelity limits, not final brand approval. The public portfolio is spacious and cinematic; the studio dashboard is a quieter light workspace. Temporary reference photography and films are not John's portfolio and require replacement with his licensed work before public launch. Source inspection and remaining replication differences are recorded in `docs/REFERENCE-AUDIT.md`; downloaded reference material lives under `audit/source/`.",
+    "keyCharacteristics": [
+      "Monochrome surfaces with grayscale film and photography.",
+      "Full-screen film heroes and asymmetric editorial media.",
+      "Inter display typography with compact Arimo supporting text.",
+      "Flat controls, fine separators, and visible keyboard states.",
+      "Smooth motion with reduced-motion and static media fallbacks.",
+      "Light, restrained operational dashboard."
+    ],
+    "rules": [
+      {
+        "name": "The Monochrome Frame Rule",
+        "body": "Keep public interface chrome neutral; color may emerge from the media rather than an added decorative accent.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** preserve the pinned reference's monochrome cinematic editorial system.",
+      "**Do** use the final cascading CSS values when duplicate declarations exist.",
+      "**Do** keep keyboard focus and reduced-motion fallbacks visible and usable.",
+      "**Do** identify temporary reference assets and illustrative projects honestly.",
+      "**Do** retain the light dashboard's operational hierarchy and text status labels."
+    ],
+    "donts": [
+      "**Don't** add a new aesthetic direction, decorative accent palette, or rounded card system.",
+      "**Don't** claim exact reference fidelity or final visual approval from this provisional implementation.",
+      "**Don't** present the reference creator's work, clients, or identity as John's.",
+      "**Don't** make motion or pointer-only exploration the sole route to project content."
+    ]
+  }
+}

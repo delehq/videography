@@ -1,0 +1,1386 @@
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+button,
+a,
+li {
+  cursor: none !important;
+}
+/* Enable custom cursor wherever you add this class */
+.cursor-area {
+  cursor: none;
+}
+
+/* Fixed overlay, above everything */
+#about-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Goo only on this inner wrapper (NOT on the fixed container) */
+#about-cursor .goo-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: url(#goo);
+  /* will-change: transform, filter; */
+}
+
+/* Tail blob (filled; goo likes fills) */
+#about-cursor .c-tail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25) inset,
+    0 0 24px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Center dot (filled; stays constant size) */
+#about-cursor .c-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.55);
+  transform: translate(-50%, -50%);
+}
+
+/* Crisp ring (kept out of the goo filter for visibility) */
+#about-cursor .c-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1.8px solid rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.06);
+  /* give it some fill so it reads over video */
+  backdrop-filter: blur(2px) saturate(120%);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%) scale(1);
+  /* will-change: transform; */
+}
+
+#about-cursor .c-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.35));
+  /* will-change: opacity, transform; */
+}
+
+#about-cursor .c-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-cursor .c-label .addon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+#about-cursor .c-label.icon-only {
+  gap: 0;
+}
+
+#about-cursor .c-label i {
+  font-size: 14px;
+}
+
+#about-cursor .c-label.icon-only i {
+  margin-right: 0;
+  font-size: 14px;
+  /* tweak if you like */
+}
+
+#about-cursor .c-label.icon-gradient i {
+  background: conic-gradient(
+    from 0deg,
+    #ff6a00,
+    #ffd500,
+    #00d084,
+    #00aaff,
+    #a100ff,
+    #ff6a00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* BEFORE click (grayscale is ON → data-color="off"): show gradient */
+#about-cursor .c-label.colorize[data-color="off"] i {
+  background: conic-gradient(
+    from 0deg,
+    #ff6a00,
+    #ffd500,
+    #00d084,
+    #00aaff,
+    #a100ff,
+    #ff6a00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Safari */
+}
+
+#about-cursor .c-label.colorize[data-color="off"] i {
+  background: conic-gradient(
+    from 0deg,
+    #ff6a00,
+    #ffd500,
+    #00d084,
+    #00aaff,
+    #a100ff,
+    #ff6a00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Optional: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  #about-cursor .goo-wrap {
+    filter: none;
+  }
+}
+
+.dcross {
+  background-image: url(/assets/images/dim.svg) !important;
+  background-position: center !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bfooter {
+  background-image: url(/assets/images/dim.svg);
+  background-position: center !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.fbg {
+  background-image: url(/assets/images/used/opti/f.jpg);
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.main-sub {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #aeabab;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Paralax  */
+.stack {
+  position: relative;
+}
+
+/* Use dynamic viewport height when available, fall back to small/regular */
+.panel {
+  position: relative;
+  min-height: 100svh;
+  height: auto;
+  isolation: isolate;
+  contain: layout paint;
+}
+
+@supports (height: 100dvh) {
+  .panel {
+    min-height: 100dvh;
+  }
+}
+
+/* scale target (we shrink this, not the panel) */
+.panel__scaler {
+  height: 100%;
+  /* will-change: transform; */
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  transform: translateZ(0); 
+}
+
+/* your colors */
+.reel {
+  background-color: #1b0e0e4e;
+  mix-blend-mode: difference;
+  background-blend-mode: difference;
+}
+
+.reel2 {
+  background-color: var(--bg-base);
+}
+
+.ypad {
+  padding-block: 10px;
+  padding-inline: clamp(45px, 4vw, 110px);
+}
+
+/* DO NOT force scrollbars here */
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+/* DO NOT force overflow-y here */
+
+.stack {
+  position: relative;
+}
+
+/* Use dynamic viewport height when available, fall back to small/regular */
+#hero.panel {
+  position: relative;
+  height: 100svh;
+  isolation: isolate;
+  contain: layout paint;
+}
+
+@supports (height: 100dvh) {
+  #hero.panel {
+    height: 100dvh;
+  }
+}
+
+/* scale target (we shrink this, not the panel) */
+#hero.panel__scaler {
+  height: 100%;
+  /* will-change: transform; */
+  transform: translateZ(0);
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+}
+
+.ypad {
+  padding-block: 10px;
+  padding-inline: clamp(45px, 4vw, 110px);
+}
+
+@media (max-width: 575.98px) {
+  .ypad {
+    padding: 0px 15px !important;
+  }
+  
+  .wlc {
+    width: auto !important;
+  }
+  .pt9 {
+    padding-top: 30px !important;
+  }
+
+  .bfooter {
+    background-image: url(/assets/images/used/opti/f.jpg) !important;
+   
+  }
+
+.contactF {
+        margin: 90px 0px 30px 0px !important;
+    }
+
+  .overlay {
+    height: 100dvh !important;
+}
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000057;
+    z-index: -1;
+}
+
+/* ===== Hero ===== */
+#hero {
+  margin: 0;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  height: 100%;
+  align-content: end;
+}
+
+.excl {
+  mix-blend-mode: difference;
+}
+
+/* you can also add .pass-thru class to elements you want parallaxed */
+.hero-name {
+  align-self: end;
+}
+
+.hero-bio {
+  align-self: end;
+  max-width: 37ch;
+}
+
+#hero {
+  isolation: isolate;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.video-colorized,
+.video-colorized video,
+#about .media video.video-colorized {
+  filter: none !important;
+}
+
+.color-flood {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  /* Gentle multi-color wash to make “colorization” feel tangible */
+  background: radial-gradient(
+      120% 120% at 20% 30%,
+      rgba(255, 120, 80, 0.28) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      130% 130% at 80% 60%,
+      rgba(120, 200, 255, 0.22) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      140% 140% at 50% 80%,
+      rgba(120, 255, 180, 0.18) 0%,
+      transparent 64%
+    );
+
+  mix-blend-mode: soft-light;
+  /* soft, cinematic color */
+  opacity: 0;
+  /* we’ll animate this */
+
+  /* We reveal the overlay with a growing “hole” mask for the spreading effect */
+  --cx: 50%;
+  /* mask center X */
+  --cy: 50%;
+  /* mask center Y */
+  --r: 0px;
+  /* mask radius */
+  -webkit-mask-image: radial-gradient(
+    circle var(--r) at var(--cx) var(--cy),
+    #000 60%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    circle var(--r) at var(--cx) var(--cy),
+    #000 60%,
+    transparent 75%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  /* will-change: opacity, -webkit-mask-image, mask-image; */
+}
+
+#hero .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+#heroVideo {
+  object-fit: cover;
+  transition: object-position 20s ease-in-out;
+  /* enables the smooth slide */
+}
+
+@media (max-width: 768px) {
+  #heroVideo {
+    object-position: 50% 50%;
+  }
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    80% 80% at 50% 40%,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.55) 70%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-title {
+  color: #f0f0f0;
+  font-weight: 900;
+  line-height: 0.95;
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.6rem, 8vw, 7.5rem);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  mix-blend-mode: difference;
+}
+
+.hero-blurb {
+  color: #e9e9e9;
+  max-width: 37ch;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.45;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* ───────── Button base (keep your entrance animations) */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.scroll-cue.icon-only {
+  width: 46px;
+  height: 46px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px) scale(0.96);
+  animation: cueFadeIn 0.8s ease forwards 0.6s, cueBounce 1.2s ease-out 1 0.6s;
+}
+
+@keyframes cueFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes cueBounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  30% {
+    transform: translateX(-50%) translateY(-6px) scale(1.02);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ───────── Tooltip with spring pop */
+#fsCue[data-tooltip] {
+  position: absolute;
+}
+
+#fsCue[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  transform: translateX(-50%) translateY(4px) scale(0.94);
+  opacity: 0;
+  padding: 6px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: #e3e3e317;
+  color: #fff;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.22s ease,
+    transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* will-change: transform, opacity; */
+}
+
+#fsCue:hover::after {
+  opacity: 1;
+  animation: tooltip-spring 460ms cubic-bezier(0.2, 0.7, 0.3, 1.2) both;
+}
+
+@keyframes tooltip-spring {
+  0% {
+    transform: translateX(-50%) translateY(6px) scale(0.86);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-6px) scale(1.08);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateX(-50%) translateY(-3px) scale(0.98);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-4px) scale(1);
+  }
+}
+
+/* ───────── Animated SVG fullscreen corners (no distortion) */
+#fsCue svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+#fsCue path {
+  vector-effect: non-scaling-stroke;
+}
+
+/* keep stroke width constant */
+
+/* Corner groups are positioned via CSS vars from the inline SVG.
+   We ONLY translate them on hover to avoid any scale distortion. */
+#fsCue .corner {
+  --nx: 0;
+  --ny: 0;
+  /* hover nudge */
+  transform: translate(
+    calc((var(--x) + var(--nx)) * 1px),
+    calc((var(--y) + var(--ny)) * 1px)
+  );
+  transform-origin: center;
+  transition: transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* will-change: transform; */
+  animation: fsCorners-breathe 2400ms ease-in-out infinite;
+}
+
+/* idle “breathing” (very subtle, also translation-free to avoid stroke wobble) */
+@keyframes fsCorners-breathe {
+  0%,
+  100% {
+    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+  }
+
+  50% {
+    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+  }
+}
+
+/* stagger so they don’t pulse in sync */
+#fsCue .corner--tl {
+  animation-delay: 0ms;
+}
+
+#fsCue .corner--tr {
+  animation-delay: 120ms;
+}
+
+#fsCue .corner--br {
+  animation-delay: 240ms;
+}
+
+#fsCue .corner--bl {
+  animation-delay: 360ms;
+}
+
+/* On hover: nudge each corner outward toward its quadrant */
+#fsCue:hover .corner {
+  animation: none;
+}
+
+#fsCue:hover .corner--tl {
+  --nx: -2.5;
+  --ny: -2.5;
+}
+
+#fsCue:hover .corner--tr {
+  --nx: 2.5;
+  --ny: -2.5;
+}
+
+#fsCue:hover .corner--br {
+  --nx: 2.5;
+  --ny: 2.5;
+}
+
+#fsCue:hover .corner--bl {
+  --nx: -2.5;
+  --ny: 2.5;
+}
+
+/* ───────── Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue.icon-only {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  #fsCue[data-tooltip]::after {
+    transform: translateX(-50%) translateY(0) scale(1);
+    transition: opacity 0.2s ease;
+  }
+
+  #fsCue:hover::after {
+    animation: none;
+    opacity: 1;
+  }
+
+  #fsCue .corner {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* overlay used for the FLIP zoom */
+.fs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 1300;
+  pointer-events: auto;
+}
+
+.fs-frame {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1402;
+  /* border: 1.5px solid rgba(255, 255, 255, .75); */
+  /* border-radius: 14px; */
+  /* box-shadow: 0 0 0 1px rgba(255, 255, 255, .15), 0 0 40px rgba(0, 0, 0, .35) inset; */
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.fs-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  pointer-events: auto;
+  isolation: isolate;
+  /* will-change: clip-path, backdrop-filter, background-color; */
+  clip-path: circle(150vmax at 50% 50%);
+  backdrop-filter: blur(0px) saturate(100%);
+  -webkit-backdrop-filter: blur(0px) saturate(100%);
+}
+
+body.fs-lock {
+  position: fixed;
+  inset: 0 auto auto 0;
+  /* top/left 0 */
+  width: 100%;
+  overflow: hidden;
+  /* no scrollbars while locked */
+}
+
+.fs-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.fs-controls__inner {
+  pointer-events: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: transparent;
+  border-radius: 0;
+}
+
+.fs-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    60% 60% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  opacity: 0;
+  transform: scale(1);
+}
+
+.fs-stage.fs-idle {
+  cursor: none;
+}
+
+.fs-stage.fs-idle .fs-controls {
+  opacity: 0 !important;
+  transform: translateY(8px) !important;
+}
+
+.fs-video-abs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3;
+  filter: grayscale(100%);
+}
+
+.fs-btn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.05rem;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.fs-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.fs-progress {
+  appearance: none;
+  width: min(17vw, 560px);
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.fs-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -5px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.18);
+}
+
+.fs-time {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.fs-controls.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show gradient on the icon when colorization is OFF (grayscale ON) */
+.fs-btn.colorize[data-color="on"] i {
+  background: conic-gradient(
+    from 0deg,
+    #ff6a00,
+    #ffd500,
+    #00d084,
+    #00aaff,
+    #a100ff,
+    #ff6a00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Safari */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue.icon-only {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  .fs-controls {
+    transition: none;
+  }
+}
+
+@media (min-width: 992px) {
+  #hero .container {
+    padding-top: 72px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: auto;
+    align-items: end;
+  }
+
+  .hero-bio {
+    justify-self: end;
+    text-align: end;
+  }
+}
+
+/* ===== ABOUT (scoped) ===== */
+#about {
+  background: var(--bg-base);
+}
+
+/* top row grid */
+#about .about-grid {
+  display: grid;
+  gap: clamp(16px, 3vw, 32px);
+  grid-template-columns: 1fr;
+  /* mobile default */
+  align-items: center;
+  padding: 140px 0px 0px 0px;
+}
+
+@media (min-width: 992px) {
+  #about .about-grid {
+    /* grid-template-columns: 1fr 1fr 5fr; */
+    grid-template-columns: 4fr 5fr;
+  }
+}
+
+/* title block */
+#about .about-eyebrow {
+  font-size: 1.08rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #aeabab;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#about .about-hd {
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-size: 63px;
+  text-align: right;
+}
+
+.pthump {
+  background-image: url(/assets/images/used/opti/thomas.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 2 / 2;
+  max-height: 290px;
+  background-blend-mode: normal;
+}
+
+/* body copy + cta */
+#about .about-copy p {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  max-width: 62ch;
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  line-height: 1.45;
+  text-transform: uppercase;
+  /* matches your mock */
+  letter-spacing: 0.02em;
+}
+
+#about .about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #2a2a2a;
+  color: var(--text-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+#about .about-cta:hover {
+  background: #121212;
+  text-decoration: none;
+}
+
+/* media helpers (local) */
+#about .media {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+#about .media video,
+#about .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale();
+}
+
+/* bottom row layout */
+#about .about-duo {
+  display: grid;
+  gap: clamp(12px, 2vw, 24px);
+  margin-top: clamp(24px, 6vw, 40px);
+  grid-template-columns: 1fr;
+  /* mobile: stacked */
+}
+
+.about-copy {
+  background-color: var(--bg-color) !important;
+  padding: 0px 0px 10px 0px;
+}
+
+/* aspect ratios + desktop split like your mock */
+#about .a-left {
+  aspect-ratio: 3 / 4;
+}
+
+#about .a-right {
+  aspect-ratio: 4 / 6;
+}
+
+@media (min-width: 992px) {
+  #about .about-duo {
+    grid-template-columns: 7fr 5fr;
+    /* big left, smaller right */
+    align-items: start;
+  }
+
+  #about .a-right {
+    /* margin-top: calc(clamp(8px, 1vw, 16px) * -1); */
+  }
+
+  /* slight stagger up */
+}
+
+/* tablet: still split, a bit tighter */
+@media (min-width: 600px) and (max-width: 991px) {
+  #about .about-duo {
+    grid-template-columns: 7fr 5fr;
+  }
+
+  #about .a-left,
+  #about .a-right {
+    aspect-ratio: 4/5;
+  }
+}
+
+.absPar {
+  position: absolute;
+  z-index: 9;
+  max-width: 320px;
+  border-radius: 0px;
+  padding: 29px 0px 30px 0px;
+  /* background: linear-gradient(90deg, #0d0d0d05 0%, #0d0d0d54 4%, transparent 100%); */
+  /* -webkit-mask-image: linear-gradient(to bottom, var(--bg-color) 90%, transparent 100%); */
+  /* mask-image: linear-gradient(to bottom, var(--bg-color) 90%, transparent 100%); */
+  margin-top: 90px;
+  mix-blend-mode: difference;
+}
+
+:root {
+  --wb-gap: 100px;
+}
+
+.works-board {
+  position: relative;
+  min-height: 100vh;
+}
+
+.works-bg {
+  position: relative; /* keep */
+  inset: 0;
+  overflow: hidden;
+  z-index: 0; /* <- was -1 */
+  aspect-ratio: 4 / 3;
+  top: 0;
+  min-height: 650px;
+}
+
+.bg-layer,
+.bg-layer video.__bgvid {
+  pointer-events: none;
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.03);
+  z-index: 0;
+  min-height: 650px;
+}
+.bg-layer {
+  /* will-change: opacity, transform; */
+  backface-visibility: hidden;
+}
+.bg-layer.active {
+  z-index: 1;
+}
+
+.bg-layer,
+.bg-layer video.__bgvid {
+  pointer-events: none;
+}
+
+.pt9 {
+  padding-top: 90px;
+}
+
+#worksBoard .container-xxl,
+#worksBoard .container-fluid {
+  position: relative;
+  z-index: 2; /* stays above the bg */
+}
+
+/* headings bar aligned with rows */
+.works-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid rgba(255, 255, 255, .18); */
+}
+
+.works-head .wlc {
+  display: flex;
+  align-items: center;
+  gap: var(--wb-gap);
+}
+
+/* rows (your pattern) */
+.work-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid rgba(255, 255, 255, .12); */
+  cursor: pointer;
+  transition: color 0.2s ease;
+  margin: 13px 0px;
+}
+
+.wlc {
+  display: flex;
+  align-items: center;
+  gap: var(--wb-gap);
+  justify-content: space-between;
+  width: 370px;
+}
+
+.wrdata {
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  padding: 25px;
+}
+
+span.ptitle {
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+.pfInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+}
+
+p.pdescription {
+  font-size: 12px;
+  color: var(--text-color);
+  z-index: 8;
+  margin: 0;
+  max-width: 220px;
+}
+
+/* optional: tighten on small screens */
+@media (max-width: 991.98px) {
+  :root {
+    --wb-gap: 18px;
+  }
+  .works-bg {
+    min-height: unset;
+  }
+
+  .bg-layer {
+    min-height: unset;
+  }
+}
+@media (max-width: 1200px) {
+  .wlc {
+    width: 310px;
+  }
+
+  #about .media {
+    aspect-ratio: auto !important;
+  }
+}
+
+/* your hover flavor */
+.work-row:hover {
+  mix-blend-mode: difference;
+  background: #f0f0f0;
+  color: #121212;
+  transition: all 0.6s ease;
+}
+
+.tracking-wide {
+  letter-spacing: 0.08em;
+}
+
+.contactF {
+  margin: 120px 0px;
+}
+
+.ulinkWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 10px;
+}
+
+a.ulink {
+  font-size: 33px;
+  text-decoration: none;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+:root {
+  --gap: 1vw;
+  --side-pad: 0;
+}
+
+.mainRoll {
+  /* position: fixed; */
+  inset: 0;
+  padding-left: 90px;
+}
+
+.gl_images {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  padding: 0 var(--side-pad);
+  height: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content__scroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.content__scroll .track {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  /* will-change: transform; */
+}
+
+.videohome {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.videohome_video,
+.videohome_img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  visibility: hidden;
+}
+
+@media (max-width: 991.98px) {
+  .gl_images {
+    grid-template-columns: 1fr;
+  }
+
+  .content__scroll-right {
+    display: none;
+  }
+
+  main {
+    position: fixed;
+    inset: 0;
+    padding-left: 0px;
+  }
+
+  .mainRoll {
+    position: fixed;
+    inset: 0;
+    padding-left: 90px;
+    z-index: -1;
+  }
+}
+
+canvas.webgl {
+  position: fixed;
+  top: 0;
+  right: 0;
+  inset: 0;
+  z-index: -1;
+}
+
+.content__scroll {
+  user-select: none;
+}
+
+/* HUD sits above everything, not scaled, pointer events pass through except on button */
+.imagecloud-hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  /* below lightbox(9999), above scene */
+}
+
+/* Your existing style, but now in the HUD */
+.img-hd-btn {
+  position: absolute;
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px) saturate(120%);
+  -webkit-backdrop-filter: blur(4px) saturate(120%);
+  background: rgb(166 197 101 / 37%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  transition: transform 0.15s, background 0.15s;
+  pointer-events: auto;
+  /* re-enable clicks */
+  user-select: none;
+}
+
+.img-hd-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  place-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+  object-fit: contain;
+}
+
+.lightbox:active {
+  display: none;
+}

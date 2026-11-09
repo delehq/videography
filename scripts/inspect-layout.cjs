@@ -1,0 +1,1 @@
+const {chromium}=require('@playwright/test');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:390,height:844}});await p.goto('http://localhost:3000/dashboard');await p.waitForTimeout(700);console.log(await p.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth})));await b.close()})()

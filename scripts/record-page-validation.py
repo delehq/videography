@@ -1,0 +1,3 @@
+﻿from pathlib import Path
+p=Path('DESIGN.md');s=p.read_text(encoding='utf-8-sig');s=s.replace('Desktop/mobile visual review passed subject to functional checks; final home-gallery regression and production build were still pending at this documentation pass.','Desktop/mobile visual review, page interaction checks, the home-gallery regression and final production build all passed.');p.write_text(s,encoding='utf8')
+p=Path('.impeccable/design.json');s=p.read_text(encoding='utf-8-sig');s=s.replace('Page audit passed with zero errors; final home gallery regression and production build pending.','Page audit and home gallery regression passed with zero errors; final production build passed.');import json;json.loads(s);p.write_text(s,encoding='utf8')

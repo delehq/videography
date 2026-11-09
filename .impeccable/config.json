@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-19T11:04:34.134Z",
+        "reason": "Agent triage: lowercase Google Fonts import supports the retained existing Inter declarations; public portfolio display typography uses source-measured Arimo. This is the same intentional font dependency, not a new design choice."
+      }
+    ]
+  }
+}

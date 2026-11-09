@@ -1,0 +1,1 @@
+{"@context":"https://schema.org","@type":"WebPage","name":"Thomas Mamfredas | Photography Videography Art of noticing. Videographer, commercial // weddings.","description":" Photography Videography Art of noticing. Videographer, commercial // weddings.","url":"https://thomasmamfredas.com/","image":"https://thomasmamfredas.com/assets/images/default-image.jpg"}

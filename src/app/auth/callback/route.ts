@@ -1,0 +1,3 @@
+﻿import {NextResponse} from 'next/server';
+import {authServer} from '@/lib/auth-server';
+export async function GET(req:Request){const url=new URL(req.url),code=url.searchParams.get('code'),next=url.searchParams.get('next')==='/reset-password'?'/reset-password':'/dashboard';const db=await authServer();if(db&&code){try{const {error}=await db.auth.exchangeCodeForSession(code);if(!error){const response=new NextResponse(null,{status:303,headers:{Location:next}});response.headers.set('Cache-Control','private, no-store');response.headers.set('Referrer-Policy','no-referrer');return response}}catch{}}return new NextResponse(null,{status:303,headers:{Location:'/login?reason=recovery','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'}})}

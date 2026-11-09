@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "nativeMenuSpace": true,
+  "screenReaderCycles": {
+    "canonical": 2,
+    "hidden": 4
+  },
+  "touch100px": {
+    "before": {
+      "y": 4220,
+      "g": 0
+    },
+    "after": {
+      "y": 4220,
+      "g": 127.6
+    },
+    "expectedGalleryPx": 130
+  }
+}

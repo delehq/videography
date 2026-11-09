@@ -1,0 +1,302 @@
+[
+  {
+    "width": 1920,
+    "styles": {
+      ".hero-title": {
+        "size": "120px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "114px",
+        "tracking": "1.2px"
+      },
+      ".hero-blurb": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "23.2px",
+        "tracking": "normal"
+      },
+      ".mtitle": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-hd": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-copy p": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "23.2px",
+        "tracking": "0.32px"
+      },
+      ".stitle": {
+        "size": "17.28px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "25.92px",
+        "tracking": "3.1104px"
+      },
+      ".mainp": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "23.2px",
+        "tracking": "0.32px"
+      },
+      ".work-row": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "24px",
+        "tracking": "normal"
+      },
+      ".small": {
+        "size": "14px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "21px",
+        "tracking": "normal"
+      },
+      ".ulink": {
+        "size": "33px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "49.5px",
+        "tracking": "1.32px"
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "styles": {
+      ".hero-title": {
+        "size": "115.2px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "109.44px",
+        "tracking": "1.152px"
+      },
+      ".hero-blurb": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "23.2px",
+        "tracking": "normal"
+      },
+      ".mtitle": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-hd": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-copy p": {
+        "size": "14.4px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.88px",
+        "tracking": "0.288px"
+      },
+      ".stitle": {
+        "size": "17.28px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "25.92px",
+        "tracking": "3.1104px"
+      },
+      ".mainp": {
+        "size": "14.4px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.88px",
+        "tracking": "0.288px"
+      },
+      ".work-row": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "24px",
+        "tracking": "normal"
+      },
+      ".small": {
+        "size": "14px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "21px",
+        "tracking": "normal"
+      },
+      ".ulink": {
+        "size": "33px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "49.5px",
+        "tracking": "1.32px"
+      }
+    }
+  },
+  {
+    "width": 768,
+    "styles": {
+      ".hero-title": {
+        "size": "61.44px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "58.368px",
+        "tracking": "0.6144px"
+      },
+      ".hero-blurb": {
+        "size": "14.4px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.88px",
+        "tracking": "normal"
+      },
+      ".mtitle": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-hd": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-copy p": {
+        "size": "14.08px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.416px",
+        "tracking": "0.2816px"
+      },
+      ".stitle": {
+        "size": "17.28px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "25.92px",
+        "tracking": "3.1104px"
+      },
+      ".mainp": {
+        "size": "14.08px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.416px",
+        "tracking": "0.2816px"
+      },
+      ".work-row": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "24px",
+        "tracking": "normal"
+      },
+      ".small": {
+        "size": "14px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "21px",
+        "tracking": "normal"
+      },
+      ".ulink": {
+        "size": "33px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "49.5px",
+        "tracking": "1.32px"
+      }
+    }
+  },
+  {
+    "width": 390,
+    "styles": {
+      ".hero-title": {
+        "size": "41.6px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "39.52px",
+        "tracking": "0.416px"
+      },
+      ".hero-blurb": {
+        "size": "14.4px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.88px",
+        "tracking": "normal"
+      },
+      ".mtitle": {
+        "size": "46px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "43.7px",
+        "tracking": "0.46px"
+      },
+      "#about .about-hd": {
+        "size": "63px",
+        "family": "Arimo, sans-serif",
+        "weight": "900",
+        "lineHeight": "59.85px",
+        "tracking": "0.63px"
+      },
+      "#about .about-copy p": {
+        "size": "14.08px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.416px",
+        "tracking": "0.2816px"
+      },
+      ".stitle": {
+        "size": "17.28px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "25.92px",
+        "tracking": "3.1104px"
+      },
+      ".mainp": {
+        "size": "14.08px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "20.416px",
+        "tracking": "0.2816px"
+      },
+      ".work-row": {
+        "size": "16px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "24px",
+        "tracking": "normal"
+      },
+      ".small": {
+        "size": "14px",
+        "family": "Arimo, sans-serif",
+        "weight": "400",
+        "lineHeight": "21px",
+        "tracking": "normal"
+      },
+      ".ulink": {
+        "size": "33px",
+        "family": "Arimo, sans-serif",
+        "weight": "600",
+        "lineHeight": "49.5px",
+        "tracking": "1.32px"
+      }
+    }
+  }
+]

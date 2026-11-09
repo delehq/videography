@@ -1,0 +1,5 @@
+﻿import 'server-only';
+import {createServerClient} from '@supabase/ssr';
+import {cookies} from 'next/headers';
+export async function authServer(){const url=process.env.NEXT_PUBLIC_SUPABASE_URL,key=process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;if(!url||!key)return null;const store=await cookies();return createServerClient(url,key,{cookies:{getAll(){return store.getAll()},setAll(values){try{values.forEach(({name,value,options})=>store.set(name,value,options))}catch{/* Proxy refreshes cookies when rendering Server Components. */}}}})}
+export async function studioSession(){const db=await authServer();if(!db)return {state:'unconfigured' as const};try{const {data:{user},error}=await db.auth.getUser();if(error||!user)return {state:'anonymous' as const};const {data:admin,error:membershipError}=await db.from('studio_admins').select('user_id').eq('user_id',user.id).maybeSingle();if(membershipError||!admin)return {state:'forbidden' as const};return {state:'authorized' as const,user}}catch{return {state:'anonymous' as const}}}

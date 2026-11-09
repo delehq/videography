@@ -1,0 +1,520 @@
+
+    #site-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #000;
+        display: grid;
+        place-items: center;
+        pointer-events: auto
+    }
+
+    .pre-grid {
+        width: min(86vmin, 720px);
+        aspect-ratio: 1/1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px
+    }
+
+    .pre-tile {
+        position: relative;
+        overflow: hidden;
+        background: #111
+    }
+
+    .pre-tile>.layer {
+        position: absolute;
+        inset: 0;
+        opacity: 1
+    }
+
+    .pre-tile img,
+    .pre-tile video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block
+    }
+
+    .pre-tile.is-pulsing {
+        animation: pulse 1.4s ease-in-out infinite
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1.01)
+        }
+
+        50% {
+            transform: scale(1.05)
+        }
+    }
+
+    .reveal-scrim {
+    position: fixed;
+    inset: 0;                
+    background: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 10000;          
+  
+}
+
+    @media (prefers-reduced-motion:reduce) {
+        .pre-tile.is-pulsing {
+            animation: none
+        }
+    }
+
+
+        /* ==============================================
+   Base
+   ============================================== */
+        body.no-scroll {
+                overflow: hidden;
+        }
+
+        /* ===== Desktop Top Bar ===== */
+        #desktopTopbar {
+                z-index: 1100;
+                background: linear-gradient(180deg, #0000008a, transparent);
+                /* sits over the hero video */
+                pointer-events: none;
+                /* links get pointer-events restored on anchors */
+        }
+
+        #desktopTopbar .dt-brand,
+        #desktopTopbar .menu-link {
+                pointer-events: auto;
+        }
+
+        #desktopTopbar .dt-brand {
+                font-weight: 800;
+                letter-spacing: .15em;
+                text-decoration: none;
+                color: #fff;
+                opacity: .9;
+                font-size: .85rem;
+                line-height: 1;
+        }
+
+        #desktopTopbar .menu-link {
+                text-decoration: none;
+                color: #fff;
+                opacity: .85;
+                font-weight: 700;
+                letter-spacing: .05em;
+                font-size: .8rem;
+                line-height: 1;
+                transition: opacity .2s ease, transform .2s ease;
+        }
+
+        #desktopTopbar .menu-link:hover {
+                opacity: 1;
+                transform: translateY(-1px);
+        }
+
+        /* Hide old desktop sidebar on lg+; keep mobile as-is */
+        @media (min-width: 992px) {
+                #mainMenu {
+                        display: none !important;
+                }
+
+                #desktopTopbar {
+                        display: block !important;
+                }
+        }
+
+
+        /* ==============================================
+   Mobile Top Bar (Centered Logo Fix)
+   ============================================== */
+        #mobileHeader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1200;
+                background: var(--bg-color);
+                /* border-bottom: 1px solid #ddd; */
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.45rem 1rem !important;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        /* Left + right sections remain */
+        #mobileHeader .top-link,
+        #mobileHeader .flip-btn {
+                flex: 0 0 auto;
+                z-index: 2;
+        }
+
+        /* Brand perfectly centered regardless of side elements */
+        #mobileHeader .brand {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: inline-block;
+                width: 180px;
+                height: 45px;
+                background-image: url(/assets/images/logo/logo_compact_w.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                text-indent: -9999px;
+        }
+
+        /* Optional: keep the menu text always aligned right */
+        #mobileHeader .flip-btn {
+                text-align: right;
+        }
+
+        /* ==============================================
+   Flip Button (fixed version)
+   ============================================== */
+        .flip-btn {
+                position: relative;
+                width: 92px;
+                height: 28px;
+                border: 0;
+                background: transparent;
+                /* perspective: 600px; */
+                cursor: pointer;
+                font-weight: 800;
+                text-transform: uppercase;
+                color: var(--a-color);
+                letter-spacing: 0.04em;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+        }
+
+        .flip-btn .face {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                backface-visibility: hidden;
+                transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+        }
+
+        .flip-btn .front {
+                transform: rotateX(0deg);
+        }
+
+        .flip-btn .back {
+                transform: rotateX(-180deg);
+        }
+
+        .flip-btn.flipped .front {
+                transform: rotateX(180deg);
+        }
+
+        .flip-btn.flipped .back {
+                transform: rotateX(0deg);
+        }
+
+        /* ==============================================
+   Mobile Overlay
+   ============================================== */
+        #mobileMenuOverlay {
+                position: fixed;
+                inset: 0;
+                background: #f7f6f2;
+                color: #111;
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s linear 0.5s;
+                z-index: 1199;
+                padding-top: 70px;
+        }
+
+        #mobileMenuOverlay.show {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        #mobileMenuOverlay .overlay-inner {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1.7rem;
+                padding: 4rem 1.5rem 1.5rem;
+                max-width: 1000px;
+                margin: 0 auto;
+        }
+
+        .overlay-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+        }
+
+        .overlay-link {
+                text-decoration: none;
+                color: #111 !important;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-weight: 800;
+        }
+
+        .overlay-link.active {
+                opacity: 0.8;
+        }
+
+        .ov-big {
+                margin: 2px 0px;
+                font-weight: 800;
+                line-height: 0.95;
+                font-size: clamp(2.5rem, 8vw, 6.2rem);
+                font-size: clamp(0.7rem, 6.3vw, 2.2rem);
+        }
+
+        .ov-big a {
+                color: var(--bg-base) !important;
+        }
+
+
+        .ov-big sup {
+                font-size: 0.35em;
+                font-weight: 700;
+                vertical-align: super;
+        }
+
+        .overlay-hero {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+        }
+
+        /* Footer Row */
+        .overlay-footer {
+                border-top: 1px solid gainsboro;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+                font-size: 0.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin-top: auto;
+                padding: 10px 0px;
+        }
+
+        .overlay-footer .left,
+        .overlay-footer .center,
+        .overlay-footer .right {
+                align-self: start;
+        }
+
+        .overlay-footer .center {
+                text-align: center;
+        }
+
+        .overlay-footer .right {
+                text-align: right;
+        }
+
+        /* ==============================================
+   Responsive Transitions (fixed)
+   ============================================== */
+        @media (max-width: 991.98px) {
+                #mainMenu {
+                        opacity: 0;
+                        transform: translateX(-20px);
+                        pointer-events: none;
+                        visibility: hidden;
+                }
+
+                #mobileHeader {
+                        opacity: 1;
+                        transform: translateY(0);
+                        pointer-events: auto;
+                        visibility: visible;
+                }
+        }
+
+        @media (min-width: 992px) {
+                #mainMenu {
+                        opacity: 1;
+                        transform: translateX(0);
+                        pointer-events: auto;
+                        visibility: visible;
+                }
+
+                #mobileHeader {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        pointer-events: none;
+                        visibility: hidden;
+                }
+        }
+
+
+    .twocol-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: clamp(20px, 4vw, 48px);
+        align-items: center;
+        /* height: 100dvh; */
+    }
+
+    @media (max-width: 991px) {
+        .twocol-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* 16:9 media boxes that work with your colorize/difference overlays */
+    .media {
+        width: 100%;
+        aspect-ratio: 16/9;
+        position: relative;
+        /* anchor overlays */
+        border-radius: 16px;
+        overflow: hidden;
+        background: #111;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    }
+
+    .col-copy {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        padding: 20px;
+        background-color: var(--bg-base);
+        box-shadow: 0 0 12px 28px #0d0d0d;
+    }
+
+    .media>img,
+    .media>video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(1);
+    }
+
+    .mt-3 {
+        margin-top: 1rem;
+    }
+
+    /* Dark/flat accordion vars */
+    #pricePackages {
+        --acc-sep: rgba(255, 255, 255, .16);
+        --acc-text: #fff;
+        --acc-muted: #d8d8d8;
+        --acc-pad-y: 14px;
+        --acc-pad-x: 0;
+
+        /* Bootstrap accordion tweaks */
+        --bs-accordion-bg: transparent;
+        --bs-accordion-border-color: transparent;
+        --bs-accordion-btn-focus-box-shadow: none;
+        --bs-accordion-active-bg: transparent;
+        --bs-accordion-active-color: var(--acc-text);
+
+        /* Make the default chevron white (both states) */
+        --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
+    }
+
+    #pricePackages .accordion-item {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--acc-sep);
+        border-radius: 0;
+    }
+
+    #pricePackages .accordion-button {
+        background: transparent;
+        color: var(--acc-text);
+        text-transform: uppercase;
+        padding: var(--acc-pad-y) var(--acc-pad-x);
+        border: 0;
+        box-shadow: none !important;
+        position: relative;
+    }
+
+    #pricePackages .accordion-button:hover {
+        color: #fff;
+        background: transparent;
+    }
+
+    #pricePackages .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    /* keep text color steady when open */
+    #pricePackages .accordion-button:not(.collapsed) {
+        color: var(--acc-text);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    /* ensure the default chevron shows crisply on dark bg */
+    #pricePackages .accordion-button::after {
+        /* Use Bootstrap's default chevron (now white via vars above) */
+        filter: none !important;
+        /* avoid dimming */
+        opacity: 1;
+        /* ensure visible */
+    }
+
+    /* body text */
+    #pricePackages .accordion-body {
+        color: var(--acc-muted);
+        padding: 10px 0 18px;
+    }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        #pricePackages .accordion-button::after {
+            transition: none;
+        }
+    }
+    @media (max-width: 575.98px) {
+    .contactF {
+        margin: 0px 0px 30px 0px !important;
+    }
+}
+
+
+.cursor-area,
+.cursor-area .media,
+.cursor-area [data-colorize] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+
+    footer ul li a:hover {
+        text-decoration: underline;
+    }
+
+    footer input.form-control {
+        border-radius: 0;
+        border-bottom: 2px solid #ccc;
+        background: transparent;
+    }
+
+    footer button {
+        border-radius: 0;
+    }

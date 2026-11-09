@@ -1,0 +1,10 @@
+﻿from pathlib import Path
+p=Path('src/components/site-shell.tsx');s=p.read_text(encoding='utf-8-sig');s=s.replace('<Footer/>',"{pathname!=='/works'&&<Footer variant={pathname==='/contact'||pathname==='/stories'?'editorial':pathname==='/weddings'||pathname==='/commercial'?'plain':'gallery'}/>}")
+a=s.index('function Footer()');s=s[:a]+'''function Footer({variant}:{variant:'gallery'|'editorial'|'plain'}){return <footer className={`footer footer-${variant}`} id="lets-talk">
+ {variant==='editorial'&&<div className="editorial-media footer-editorial-media"><img src="/media/wedding2.jpg" alt="A quiet moment captured on film"/></div>}
+ <div className="footer-copy"><h2>LET'S TALK</h2><p>Good stories begin with a conversation.</p><p>Weddings: date &amp; venue<br/>Commercial: your idea &amp; timeline</p><div className="footer-links"><Link href="/book?service=Weddings">Wedding inquiry <ArrowUpRight/></Link><Link href="/book?service=Commercial">Commercial brief <ArrowUpRight/></Link><Link href="/book">Start a project <ArrowUpRight/></Link></div><Link className="footer-all-work" href="/works">View all films <ArrowUpRight size={16}/></Link><small>John - Videographer<br/>Contact details coming soon.</small></div>
+ {variant==='gallery'&&<FilmRoll/>}
+ <div className="footer-base"><span>© {new Date().getFullYear()} JOHN</span><span>Photography / Film / Stories</span><Link href="/dashboard">Studio login <ArrowUpRight size={13}/></Link></div>
+ </footer>}
+''';p.write_text(s,encoding='utf8')
+p=Path('src/components/reference-pages.tsx');s=p.read_text(encoding='utf-8-sig');old='''<Link className="editorial-media" href={`/work/${p.slug}`} aria-label={`View ${p.title}`}>{i===2?<Film src={p.film} poster={p.image}/>:<img src={`/media/${p.image}`} alt={p.title}/>}</Link>''';new='''{i===2?<div className="editorial-media"><Film src={p.film} poster={p.image}/></div>:<Link className="editorial-media" href={`/work/${p.slug}`} aria-label={`View ${p.title}`}><img src={`/media/${p.image}`} alt={p.title}/></Link>}''';s=s.replace(old,new);p.write_text(s,encoding='utf8')

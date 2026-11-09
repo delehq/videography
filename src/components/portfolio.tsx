@@ -96,7 +96,7 @@ export function PhotoCloud() {
       <div className="cloud-copy">
         <p>
           <SiteText id="portfolio.9.every-photograph-is-a-single" fallback="Every photograph is a single frame from a bigger story. Moments of light, motion, and spontaneity captured in one image yet filled with the atmosphere of the entire day. This is my eye behind the camera: honest moments, in a cinematic form."/></p>
-        <small><span className="cloud-touch-hint">Swipe sideways to explore. Tap a photograph to enlarge.</span><span className="cloud-pointer-hint"><SiteText id="portfolio.10.drag-to-explore" fallback="DRAG TO EXPLORE"/></span></small>
+        <small><SiteText id="portfolio.10.drag-to-explore" fallback="DRAG TO EXPLORE"/></small>
       </div>
       <div
         className={`photo-cloud ${drag ? "dragging" : ""}`}

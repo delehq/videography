@@ -1,3 +1,5 @@
+> Motion behavior in this earlier audit is superseded by [the reference-motion restoration](MOBILE-MOTION-RESTORATION.md). The phone pinning, covers, loader, service rolls and viewer timings now follow the reference again.
+
 # Mobile UI/UX and motion audit
 
 Reviewed 9 November 2026 using the Impeccable audit, adaptation and motion

@@ -1,3 +1,5 @@
+> Motion behavior in this earlier audit is superseded by [the reference-motion restoration](MOBILE-MOTION-RESTORATION.md). The phone pinning, covers, loader, service rolls and viewer timings now follow the reference again.
+
 # Mobile responsiveness review
 
 The public site retains its monochrome cinematic styling. The final responsive

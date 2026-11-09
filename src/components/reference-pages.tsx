@@ -16,7 +16,7 @@ function ServiceRoll({wedding}:{wedding:boolean}) {
   const spacer=useRef<HTMLDivElement>(null);
   useEffect(()=>{
     const responsive=gsap.matchMedia();
-    responsive.add('(min-width: 992px) and (prefers-reduced-motion: no-preference)',()=>{
+    responsive.add('(prefers-reduced-motion: no-preference)',()=>{
     const el=section.current!;
     const viewport=el.querySelector<HTMLElement>('.service-roll-viewport')!;
     const track=el.querySelector<HTMLElement>('.service-roll-track')!;

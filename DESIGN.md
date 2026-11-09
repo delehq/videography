@@ -247,16 +247,16 @@ The portal-based film viewer permits keyboard access to native video controls an
 
 ## Mobile navigation and motion
 
-Desktop and mobile navigation share the same eight labels and destinations in
-`site-shell.tsx`. The compact header exposes Works, the monogram and Menu; the
-full menu includes pricing and booking, marks the current page and restores
-focus when closed. Mobile visitors use native scrolling and skip the blocking
-loader. The index hero has one restrained scroll-linked camera movement;
-photo-cloud copy sits above the gallery, and empty transition panels are
-omitted. Cloud graphics initialize near the viewport with a compact rendering
-budget. Fullscreen transitions are shorter on touch devices without animated
-backdrop blur. `src/app/responsive.css` is the final responsive layer. Detailed
-coverage and screenshots are linked in `docs/MOBILE-UX-AUDIT.md`.
+Desktop and mobile navigation share the same eight labels and destinations.
+The compact header exposes Works, the monogram and Menu. Phone layouts retain
+the reference's pinned panels and scroll-linked scale from 1 to .92, including
+the dark and pale difference-blended covers. Long sections finish scrolling
+before pinning. Service film rolls remain scroll-driven on phones; their first
+film retains its portrait ratio and stills retain natural proportions. The
+photo cloud is a full-viewport composition with overlaid copy. Loader and
+fullscreen transition timings follow the reference on phones as well as desktop.
+Reduced-motion visitors retain static alternatives. See
+`docs/MOBILE-MOTION-RESTORATION.md` for measurements and regression checks.
 
 ## Dashboard administration surface
 

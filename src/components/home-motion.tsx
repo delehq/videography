@@ -10,40 +10,32 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 export function HomeMotion() {
   const pathname = usePathname();
   useEffect(() => {
-    const responsive=gsap.matchMedia();
-    responsive.add('(max-width: 767px) and (prefers-reduced-motion: no-preference)',()=>{
-      const hero=document.querySelector<HTMLElement>('.home-stack .hero');
-      const media=hero?.querySelector<HTMLElement>('.hero-media');
-      if(!hero||!media)return;
-      // One scroll-linked camera movement, without pinning or smoothing touch input.
-      let frame=0;
-      const draw=()=>{frame=0;const rect=hero.getBoundingClientRect();const progress=Math.max(0,Math.min(1,-rect.top/rect.height));media.style.transform=`translate3d(0,${progress*48}px,0) scale(1.04)`;};
-      const schedule=()=>{if(!frame)frame=requestAnimationFrame(draw)};
-      hero.dataset.mobileMotion='native';draw();
-      window.addEventListener('scroll',schedule,{passive:true});
-      window.addEventListener('resize',schedule);
-      return()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule);media.style.removeProperty('transform');delete hero.dataset.mobileMotion;};
-    });
-    return()=>responsive.revert();
-  },[pathname]);
-  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-    const compact=matchMedia('(max-width: 767px)');
     let panels:HTMLElement[]=[];
     let ctx:gsap.Context|undefined;
     let alive=true,frame=0,settle=0;
+    let measuredLayout='';
     let sizes:ResizeObserver|undefined;
     const collect=()=>document.querySelector('.home-stack,.reference-stack')?[...document.querySelectorAll<HTMLElement>('.home-stack .scroll-panel, .reference-stack .scroll-panel, .footer')]:[];
-    function refresh(){if(alive&&!compact.matches&&!reduced.matches)ScrollTrigger.refresh();}
-    function scheduleRefresh(){if(!alive||compact.matches||reduced.matches)return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{clearTimeout(settle);settle=window.setTimeout(refresh,50)});}
+    const layout=()=>panels.map(panel=>`${panel.offsetWidth}:${panel.scrollHeight}`).join('|');
+    // A pinned child reports its fixed viewport position. Its spacer retains
+    // the document position needed to refresh the reference's cover timing.
+    const naturalTop=(panel:HTMLElement)=>{
+      const parent=panel.parentElement;
+      const box=parent?.classList.contains('pin-spacer')?parent:panel;
+      return box.getBoundingClientRect().top+scrollY;
+    };
+    function refresh(){if(alive)ScrollTrigger.refresh();}
+    function scheduleRefresh(){if(!alive)return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{clearTimeout(settle);settle=window.setTimeout(refresh,50)});}
     function build(){
       if(!alive)return;
       const nextPanels=collect();
       if(nextPanels.length===panels.length&&nextPanels.every((panel,i)=>panel===panels[i]))return;
       sizes?.disconnect();ctx?.revert();
       panels=nextPanels;
-      if(!panels.length||reduced.matches||compact.matches)return;
+      measuredLayout=layout();
+      if(!panels.length||reduced.matches)return;
       ctx=gsap.context(() => {
       panels.forEach((panel,index) => {
         const next = panels[index+1];
@@ -53,14 +45,14 @@ export function HomeMotion() {
         if(panel.hasAttribute('data-custom-pin'))return;
         ScrollTrigger.create({
           id: `home-panel-${index}`, trigger: panel,
-          start: () => panel.scrollHeight > innerHeight*1.02 ? 'bottom bottom' : 'top top',
-          endTrigger: next, end: 'top top', pin: true, pinSpacing: false,
+          start: () => naturalTop(panel)+(panel.scrollHeight>innerHeight*1.02?panel.scrollHeight-innerHeight:0),
+          end: () => naturalTop(next), pin: true, pinSpacing: false,
           anticipatePin: 1, invalidateOnRefresh: true,
         });
         const surface = panel.querySelector<HTMLElement>(':scope > .panel-surface');
         if (surface) gsap.fromTo(surface,{scale:1},{
           scale:.92,ease:'none',scrollTrigger:{
-            trigger:next,start:'top bottom',end:'top top',scrub:true,invalidateOnRefresh:true,
+            trigger:next,start:()=>naturalTop(next)-innerHeight,end:()=>naturalTop(next),scrub:true,invalidateOnRefresh:true,
           },
         });
       });
@@ -75,7 +67,9 @@ export function HomeMotion() {
     const main=document.querySelector('#main');
     if(main)mutations.observe(main,{childList:true,subtree:true});
     build();
-    const onMediaLoad=(event:Event)=>{if((event.target as HTMLElement)?.matches('img,video'))scheduleRefresh()};
+    // Decoding a film inside an already-sized frame must not refresh/re-pin the
+    // whole stack while a finger is scrolling. Remeasure only actual layout changes.
+    const onMediaLoad=(event:Event)=>{if((event.target as HTMLElement)?.matches('img,video')){const next=layout();if(next!==measuredLayout){measuredLayout=next;scheduleRefresh()}}};
     main?.addEventListener('load',onMediaLoad,true);
     main?.addEventListener('loadedmetadata',onMediaLoad,true);
     document.fonts.ready.then(scheduleRefresh);
@@ -87,8 +81,7 @@ export function HomeMotion() {
     window.addEventListener('resize',scheduleRefresh);
     function onReduced(){panels=[];ctx?.revert();ctx=undefined;sizes?.disconnect();build();scheduleRefresh()}
     reduced.addEventListener('change',onReduced);
-    compact.addEventListener('change',onReduced);
-    return()=>{alive=false;mutations.disconnect();sizes?.disconnect();cancelAnimationFrame(frame);clearTimeout(settle);main?.removeEventListener('load',onMediaLoad,true);main?.removeEventListener('loadedmetadata',onMediaLoad,true);window.removeEventListener('john:loader-done',onLoaderDone);window.removeEventListener('pageshow',scheduleRefresh);window.removeEventListener('resize',scheduleRefresh);reduced.removeEventListener('change',onReduced);compact.removeEventListener('change',onReduced);ctx?.revert();};
+    return()=>{alive=false;mutations.disconnect();sizes?.disconnect();cancelAnimationFrame(frame);clearTimeout(settle);main?.removeEventListener('load',onMediaLoad,true);main?.removeEventListener('loadedmetadata',onMediaLoad,true);window.removeEventListener('john:loader-done',onLoaderDone);window.removeEventListener('pageshow',scheduleRefresh);window.removeEventListener('resize',scheduleRefresh);reduced.removeEventListener('change',onReduced);ctx?.revert();};
   },[pathname]);
   return null;
 }

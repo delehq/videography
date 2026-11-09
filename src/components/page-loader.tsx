@@ -10,7 +10,7 @@ export function PageLoader() {
   const [done,setDone]=useState(false);
   const [tiles,setTiles]=useState<(number|null)[]>(Array(9).fill(null));
   useEffect(()=>{
-    if(matchMedia('(prefers-reduced-motion: reduce), (max-width: 991px), (pointer: coarse)').matches){setDone(true);return;}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){setDone(true);return;}
     let alive=true,loaded=document.readyState==='complete',filled=0,exiting=false;
     const available:number[]=[];
     const timers:ReturnType<typeof setTimeout>[]=[];

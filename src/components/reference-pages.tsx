@@ -15,7 +15,8 @@ function ServiceRoll({wedding}:{wedding:boolean}) {
   const section=useRef<HTMLElement>(null);
   const spacer=useRef<HTMLDivElement>(null);
   useEffect(()=>{
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const responsive=gsap.matchMedia();
+    responsive.add('(min-width: 992px) and (prefers-reduced-motion: no-preference)',()=>{
     const el=section.current!;
     const viewport=el.querySelector<HTMLElement>('.service-roll-viewport')!;
     const track=el.querySelector<HTMLElement>('.service-roll-track')!;
@@ -37,7 +38,9 @@ function ServiceRoll({wedding}:{wedding:boolean}) {
     const resize=new ResizeObserver(()=>{clearTimeout(timer);timer=window.setTimeout(()=>{if(alive){syncSpace();ScrollTrigger.refresh()}},60)});
     resize.observe(track);resize.observe(viewport);
     document.fonts.ready.then(()=>{if(alive){syncSpace();ScrollTrigger.refresh()}});
-    return()=>{alive=false;resize.disconnect();clearTimeout(timer);ScrollTrigger.removeEventListener('refreshInit',syncSpace);ctx.revert();};
+    return()=>{alive=false;resize.disconnect();clearTimeout(timer);ScrollTrigger.removeEventListener('refreshInit',syncSpace);ctx.revert();if(spacer.current)spacer.current.style.height='';};
+    });
+    return()=>responsive.revert();
   },[]);
   const frames=(wedding?['wed3.jpg','9.jpg','15.jpg']:['comm1.jpg','comm2.jpg']).map(f=>referenceMedia('/assets/images/used/opti/'+f));
   return <><section ref={section} className="service-roll scroll-panel" data-custom-pin><div className="panel-surface reference-two-col">

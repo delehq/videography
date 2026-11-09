@@ -47,7 +47,7 @@ export function Film({
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
       />
 
     </div>
@@ -57,7 +57,7 @@ export function Home(){return <div className="home-stack">
 <section className="hero scroll-panel"><div className="panel-surface">
  <div className="hero-media"><Film src="hero.mp4" poster="hero.jpg"/><div className="hero-shade"/></div>
  <div className="hero-bottom"><h1><SiteText id="portfolio.1.john" fallback="JOHN"/></h1><p><SiteText id="portfolio.2.i-see-stories-in-light" fallback="I see stories in light, movement, and the moments in between. Wedding films, brand stories, and a little of everything that makes us feel."/></p></div>
- <a className="scroll-cue" href="#about" aria-label="Scroll to about"><ArrowDown size={17}/></a>
+ <a className="scroll-cue" href="#about" aria-label="Scroll to about" onClick={e=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;e.preventDefault();document.getElementById('about')?.scrollIntoView({behavior:'smooth',block:'start'})}}><ArrowDown size={17}/></a>
 </div></section>
 <section className="about scroll-panel" id="about"><div className="panel-surface">
  <div className="about-top"><div><span className="section-label"><SiteText id="portfolio.3.about" fallback="\\ ABOUT"/></span><SiteImage className="portrait" src="/media/portrait.jpg" alt="A cinematic portrait - reference imagery"/></div><h2><SiteText id="portfolio.4.the" fallback="THE"/><br/><SiteText id="portfolio.5.art-of" fallback="ART OF"/><br/><SiteText id="portfolio.6.noticing" fallback="NOTICING"/></h2></div>
@@ -96,7 +96,7 @@ export function PhotoCloud() {
       <div className="cloud-copy">
         <p>
           <SiteText id="portfolio.9.every-photograph-is-a-single" fallback="Every photograph is a single frame from a bigger story. Moments of light, motion, and spontaneity captured in one image yet filled with the atmosphere of the entire day. This is my eye behind the camera: honest moments, in a cinematic form."/></p>
-        <small><SiteText id="portfolio.10.drag-to-explore" fallback="DRAG TO EXPLORE"/></small>
+        <small><span className="cloud-touch-hint">Swipe sideways to explore. Tap a photograph to enlarge.</span><span className="cloud-pointer-hint"><SiteText id="portfolio.10.drag-to-explore" fallback="DRAG TO EXPLORE"/></span></small>
       </div>
       <div
         className={`photo-cloud ${drag ? "dragging" : ""}`}
@@ -149,6 +149,7 @@ export function PhotoCloud() {
               <SiteImage
                 src={`/media/${p}`}
                 alt={`Photograph ${i+1}`}
+                loading="lazy"
                 draggable={false}
               />
             </button>

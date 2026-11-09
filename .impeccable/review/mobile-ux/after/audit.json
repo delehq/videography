@@ -1,0 +1,74 @@
+{
+  "routes": [],
+  "navigation": {
+    "desktop": [
+      {
+        "label": "Index",
+        "href": "/"
+      },
+      {
+        "label": "Commercial",
+        "href": "/commercial"
+      },
+      {
+        "label": "Weddings",
+        "href": "/weddings"
+      },
+      {
+        "label": "Works",
+        "href": "/works"
+      },
+      {
+        "label": "Stories",
+        "href": "/stories"
+      },
+      {
+        "label": "Work with me",
+        "href": "/contact"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Book a session",
+        "href": "/book"
+      }
+    ],
+    "mobile": [
+      {
+        "label": "Index",
+        "href": "/"
+      },
+      {
+        "label": "Commercial",
+        "href": "/commercial"
+      },
+      {
+        "label": "Weddings",
+        "href": "/weddings"
+      },
+      {
+        "label": "Works",
+        "href": "/works"
+      },
+      {
+        "label": "Stories",
+        "href": "/stories"
+      },
+      {
+        "label": "Work with me",
+        "href": "/contact"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Book a session",
+        "href": "/book"
+      }
+    ]
+  },
+  "errors": []
+}

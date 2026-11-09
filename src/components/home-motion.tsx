@@ -10,22 +10,40 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 export function HomeMotion() {
   const pathname = usePathname();
   useEffect(() => {
+    const responsive=gsap.matchMedia();
+    responsive.add('(max-width: 767px) and (prefers-reduced-motion: no-preference)',()=>{
+      const hero=document.querySelector<HTMLElement>('.home-stack .hero');
+      const media=hero?.querySelector<HTMLElement>('.hero-media');
+      if(!hero||!media)return;
+      // One scroll-linked camera movement, without pinning or smoothing touch input.
+      let frame=0;
+      const draw=()=>{frame=0;const rect=hero.getBoundingClientRect();const progress=Math.max(0,Math.min(1,-rect.top/rect.height));media.style.transform=`translate3d(0,${progress*48}px,0) scale(1.04)`;};
+      const schedule=()=>{if(!frame)frame=requestAnimationFrame(draw)};
+      hero.dataset.mobileMotion='native';draw();
+      window.addEventListener('scroll',schedule,{passive:true});
+      window.addEventListener('resize',schedule);
+      return()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule);media.style.removeProperty('transform');delete hero.dataset.mobileMotion;};
+    });
+    return()=>responsive.revert();
+  },[pathname]);
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    const compact=matchMedia('(max-width: 767px)');
     let panels:HTMLElement[]=[];
     let ctx:gsap.Context|undefined;
     let alive=true,frame=0,settle=0;
     let sizes:ResizeObserver|undefined;
     const collect=()=>document.querySelector('.home-stack,.reference-stack')?[...document.querySelectorAll<HTMLElement>('.home-stack .scroll-panel, .reference-stack .scroll-panel, .footer')]:[];
-    function refresh(){if(alive)ScrollTrigger.refresh();}
-    function scheduleRefresh(){if(!alive)return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{clearTimeout(settle);settle=window.setTimeout(refresh,50)});}
+    function refresh(){if(alive&&!compact.matches&&!reduced.matches)ScrollTrigger.refresh();}
+    function scheduleRefresh(){if(!alive||compact.matches||reduced.matches)return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{clearTimeout(settle);settle=window.setTimeout(refresh,50)});}
     function build(){
       if(!alive)return;
       const nextPanels=collect();
       if(nextPanels.length===panels.length&&nextPanels.every((panel,i)=>panel===panels[i]))return;
       sizes?.disconnect();ctx?.revert();
       panels=nextPanels;
-      if(!panels.length||reduced.matches)return;
+      if(!panels.length||reduced.matches||compact.matches)return;
       ctx=gsap.context(() => {
       panels.forEach((panel,index) => {
         const next = panels[index+1];
@@ -69,7 +87,8 @@ export function HomeMotion() {
     window.addEventListener('resize',scheduleRefresh);
     function onReduced(){panels=[];ctx?.revert();ctx=undefined;sizes?.disconnect();build();scheduleRefresh()}
     reduced.addEventListener('change',onReduced);
-    return()=>{alive=false;mutations.disconnect();sizes?.disconnect();cancelAnimationFrame(frame);clearTimeout(settle);main?.removeEventListener('load',onMediaLoad,true);main?.removeEventListener('loadedmetadata',onMediaLoad,true);window.removeEventListener('john:loader-done',onLoaderDone);window.removeEventListener('pageshow',scheduleRefresh);window.removeEventListener('resize',scheduleRefresh);reduced.removeEventListener('change',onReduced);ctx?.revert();};
+    compact.addEventListener('change',onReduced);
+    return()=>{alive=false;mutations.disconnect();sizes?.disconnect();cancelAnimationFrame(frame);clearTimeout(settle);main?.removeEventListener('load',onMediaLoad,true);main?.removeEventListener('loadedmetadata',onMediaLoad,true);window.removeEventListener('john:loader-done',onLoaderDone);window.removeEventListener('pageshow',scheduleRefresh);window.removeEventListener('resize',scheduleRefresh);reduced.removeEventListener('change',onReduced);compact.removeEventListener('change',onReduced);ctx?.revert();};
   },[pathname]);
   return null;
 }

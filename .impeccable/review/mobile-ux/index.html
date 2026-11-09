@@ -1,0 +1,261 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mobile UX screen audit</title><style>body{font:16px/1.6 system-ui;margin:32px auto;padding:0 24px;max-width:1250px;color:#222;background:#f5f4f0}h1{line-height:1.1}details{border-top:1px solid #aaa;padding:18px 0}summary{cursor:pointer;font-weight:650}section{margin:48px 0}.screens{display:flex;gap:20px;overflow:auto;padding:20px 0}.screens figure{margin:0;flex:0 0 300px}.screens img{width:100%;height:auto;display:block}a{color:inherit;text-underline-offset:4px}figcaption{margin:8px 0}input{font:inherit;padding:12px;width:min(95%,600px)}small{color:#555}</style><h1>Mobile UX screen audit</h1><p>9 November 2026 ? 46 public routes, including all 33 projects; ten studio sections captured separately with synthetic data.</p><p>276 mobile scroll-position checks passed at 320/390px. The broader suite passed 88 responsive checks through 1440px. WebKit passed 24 mobile route layout checks and touch navigation. Physical-device performance remains unverified.</p><p><a href="../../../docs/MOBILE-UX-AUDIT.md">Read findings and validation</a></p>
+<section><h2>Navigation and index flow</h2><div class="screens">
+<figure><a href="after/navigation-menu.png"><img loading="lazy" src="after/navigation-menu.png" alt="Shared navigation with current-page state"></a><figcaption>Shared navigation with current-page state</figcaption></figure>
+<figure><a href="after/index-gallery-copy.png"><img loading="lazy" src="after/index-gallery-copy.png" alt="Readable copy separated from gallery"></a><figcaption>Readable copy separated from gallery</figcaption></figure>
+<figure><a href="after/index-gallery.png"><img loading="lazy" src="after/index-gallery.png" alt="Touch photo exploration"></a><figcaption>Touch photo exploration</figcaption></figure>
+<figure><a href="after/index-desktop.png"><img loading="lazy" src="after/index-desktop.png" alt="Desktop navigation parity"></a><figcaption>Desktop navigation parity</figcaption></figure>
+</div></section><h2>All public routes</h2><label>Find a route <input id="search" type="search" placeholder="For example: weddings or ionian"></label><section id="routes">
+<details><summary>/book</summary><div class="screens">
+<figure><a href="after/book-top.png"><img loading="lazy" src="after/book-top.png" alt="/book top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/book-middle.png"><img loading="lazy" src="after/book-middle.png" alt="/book middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/book-bottom.png"><img loading="lazy" src="after/book-bottom.png" alt="/book bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/booking/mobile-review/return</summary><div class="screens">
+<figure><a href="after/booking-mobile-review-return-top.png"><img loading="lazy" src="after/booking-mobile-review-return-top.png" alt="/booking-mobile-review-return top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/booking-mobile-review-return-middle.png"><img loading="lazy" src="after/booking-mobile-review-return-middle.png" alt="/booking-mobile-review-return middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/booking-mobile-review-return-bottom.png"><img loading="lazy" src="after/booking-mobile-review-return-bottom.png" alt="/booking-mobile-review-return bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/booking/mobile-review</summary><div class="screens">
+<figure><a href="after/booking-mobile-review-top.png"><img loading="lazy" src="after/booking-mobile-review-top.png" alt="/booking-mobile-review top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/booking-mobile-review-middle.png"><img loading="lazy" src="after/booking-mobile-review-middle.png" alt="/booking-mobile-review middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/booking-mobile-review-bottom.png"><img loading="lazy" src="after/booking-mobile-review-bottom.png" alt="/booking-mobile-review bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/commercial</summary><div class="screens">
+<figure><a href="after/commercial-top.png"><img loading="lazy" src="after/commercial-top.png" alt="/commercial top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/commercial-middle.png"><img loading="lazy" src="after/commercial-middle.png" alt="/commercial middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/commercial-bottom.png"><img loading="lazy" src="after/commercial-bottom.png" alt="/commercial bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/contact</summary><div class="screens">
+<figure><a href="after/contact-top.png"><img loading="lazy" src="after/contact-top.png" alt="/contact top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/contact-middle.png"><img loading="lazy" src="after/contact-middle.png" alt="/contact middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/contact-bottom.png"><img loading="lazy" src="after/contact-bottom.png" alt="/contact bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/forgot-password</summary><div class="screens">
+<figure><a href="after/forgot-password-top.png"><img loading="lazy" src="after/forgot-password-top.png" alt="/forgot-password top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/forgot-password-middle.png"><img loading="lazy" src="after/forgot-password-middle.png" alt="/forgot-password middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/forgot-password-bottom.png"><img loading="lazy" src="after/forgot-password-bottom.png" alt="/forgot-password bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/</summary><div class="screens">
+<figure><a href="after/index-top.png"><img loading="lazy" src="after/index-top.png" alt="/ top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/index-middle.png"><img loading="lazy" src="after/index-middle.png" alt="/ middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/index-bottom.png"><img loading="lazy" src="after/index-bottom.png" alt="/ bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/login</summary><div class="screens">
+<figure><a href="after/login-top.png"><img loading="lazy" src="after/login-top.png" alt="/login top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/login-middle.png"><img loading="lazy" src="after/login-middle.png" alt="/login middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/login-bottom.png"><img loading="lazy" src="after/login-bottom.png" alt="/login bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/pricing</summary><div class="screens">
+<figure><a href="after/pricing-top.png"><img loading="lazy" src="after/pricing-top.png" alt="/pricing top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/pricing-middle.png"><img loading="lazy" src="after/pricing-middle.png" alt="/pricing middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/pricing-bottom.png"><img loading="lazy" src="after/pricing-bottom.png" alt="/pricing bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/reset-password</summary><div class="screens">
+<figure><a href="after/reset-password-top.png"><img loading="lazy" src="after/reset-password-top.png" alt="/reset-password top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/reset-password-middle.png"><img loading="lazy" src="after/reset-password-middle.png" alt="/reset-password middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/reset-password-bottom.png"><img loading="lazy" src="after/reset-password-bottom.png" alt="/reset-password bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/stories</summary><div class="screens">
+<figure><a href="after/stories-top.png"><img loading="lazy" src="after/stories-top.png" alt="/stories top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/stories-middle.png"><img loading="lazy" src="after/stories-middle.png" alt="/stories middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/stories-bottom.png"><img loading="lazy" src="after/stories-bottom.png" alt="/stories bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/weddings</summary><div class="screens">
+<figure><a href="after/weddings-top.png"><img loading="lazy" src="after/weddings-top.png" alt="/weddings top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/weddings-middle.png"><img loading="lazy" src="after/weddings-middle.png" alt="/weddings middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/weddings-bottom.png"><img loading="lazy" src="after/weddings-bottom.png" alt="/weddings bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/alamis-hotel-and-apartments</summary><div class="screens">
+<figure><a href="after/work-alamis-hotel-and-apartments-top.png"><img loading="lazy" src="after/work-alamis-hotel-and-apartments-top.png" alt="/work/alamis-hotel-and-apartments top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-alamis-hotel-and-apartments-middle.png"><img loading="lazy" src="after/work-alamis-hotel-and-apartments-middle.png" alt="/work/alamis-hotel-and-apartments middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-alamis-hotel-and-apartments-bottom.png"><img loading="lazy" src="after/work-alamis-hotel-and-apartments-bottom.png" alt="/work/alamis-hotel-and-apartments bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/basilis-maria</summary><div class="screens">
+<figure><a href="after/work-basilis-maria-top.png"><img loading="lazy" src="after/work-basilis-maria-top.png" alt="/work/basilis-maria top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-basilis-maria-middle.png"><img loading="lazy" src="after/work-basilis-maria-middle.png" alt="/work/basilis-maria middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-basilis-maria-bottom.png"><img loading="lazy" src="after/work-basilis-maria-bottom.png" alt="/work/basilis-maria bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/caratos</summary><div class="screens">
+<figure><a href="after/work-caratos-top.png"><img loading="lazy" src="after/work-caratos-top.png" alt="/work/caratos top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-caratos-middle.png"><img loading="lazy" src="after/work-caratos-middle.png" alt="/work/caratos middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-caratos-bottom.png"><img loading="lazy" src="after/work-caratos-bottom.png" alt="/work/caratos bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/danni-lotte</summary><div class="screens">
+<figure><a href="after/work-danni-lotte-top.png"><img loading="lazy" src="after/work-danni-lotte-top.png" alt="/work/danni-lotte top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-danni-lotte-middle.png"><img loading="lazy" src="after/work-danni-lotte-middle.png" alt="/work/danni-lotte middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-danni-lotte-bottom.png"><img loading="lazy" src="after/work-danni-lotte-bottom.png" alt="/work/danni-lotte bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/dimitris-eygenia</summary><div class="screens">
+<figure><a href="after/work-dimitris-eygenia-top.png"><img loading="lazy" src="after/work-dimitris-eygenia-top.png" alt="/work/dimitris-eygenia top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-dimitris-eygenia-middle.png"><img loading="lazy" src="after/work-dimitris-eygenia-middle.png" alt="/work/dimitris-eygenia middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-dimitris-eygenia-bottom.png"><img loading="lazy" src="after/work-dimitris-eygenia-bottom.png" alt="/work/dimitris-eygenia bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/golden-coast</summary><div class="screens">
+<figure><a href="after/work-golden-coast-top.png"><img loading="lazy" src="after/work-golden-coast-top.png" alt="/work/golden-coast top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-golden-coast-middle.png"><img loading="lazy" src="after/work-golden-coast-middle.png" alt="/work/golden-coast middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-golden-coast-bottom.png"><img loading="lazy" src="after/work-golden-coast-bottom.png" alt="/work/golden-coast bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/hamsa</summary><div class="screens">
+<figure><a href="after/work-hamsa-top.png"><img loading="lazy" src="after/work-hamsa-top.png" alt="/work/hamsa top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-hamsa-middle.png"><img loading="lazy" src="after/work-hamsa-middle.png" alt="/work/hamsa middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-hamsa-bottom.png"><img loading="lazy" src="after/work-hamsa-bottom.png" alt="/work/hamsa bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/iakobos-dionysia</summary><div class="screens">
+<figure><a href="after/work-iakobos-dionysia-top.png"><img loading="lazy" src="after/work-iakobos-dionysia-top.png" alt="/work/iakobos-dionysia top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-iakobos-dionysia-middle.png"><img loading="lazy" src="after/work-iakobos-dionysia-middle.png" alt="/work/iakobos-dionysia middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-iakobos-dionysia-bottom.png"><img loading="lazy" src="after/work-iakobos-dionysia-bottom.png" alt="/work/iakobos-dionysia bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/ionian-aura</summary><div class="screens">
+<figure><a href="after/work-ionian-aura-top.png"><img loading="lazy" src="after/work-ionian-aura-top.png" alt="/work/ionian-aura top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-ionian-aura-middle.png"><img loading="lazy" src="after/work-ionian-aura-middle.png" alt="/work/ionian-aura middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-ionian-aura-bottom.png"><img loading="lazy" src="after/work-ionian-aura-bottom.png" alt="/work/ionian-aura bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/iskios-suites</summary><div class="screens">
+<figure><a href="after/work-iskios-suites-top.png"><img loading="lazy" src="after/work-iskios-suites-top.png" alt="/work/iskios-suites top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-iskios-suites-middle.png"><img loading="lazy" src="after/work-iskios-suites-middle.png" alt="/work/iskios-suites middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-iskios-suites-bottom.png"><img loading="lazy" src="after/work-iskios-suites-bottom.png" alt="/work/iskios-suites bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/its-time</summary><div class="screens">
+<figure><a href="after/work-its-time-top.png"><img loading="lazy" src="after/work-its-time-top.png" alt="/work/its-time top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-its-time-middle.png"><img loading="lazy" src="after/work-its-time-middle.png" alt="/work/its-time middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-its-time-bottom.png"><img loading="lazy" src="after/work-its-time-bottom.png" alt="/work/its-time bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/koukouvagia-villa</summary><div class="screens">
+<figure><a href="after/work-koukouvagia-villa-top.png"><img loading="lazy" src="after/work-koukouvagia-villa-top.png" alt="/work/koukouvagia-villa top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-koukouvagia-villa-middle.png"><img loading="lazy" src="after/work-koukouvagia-villa-middle.png" alt="/work/koukouvagia-villa middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-koukouvagia-villa-bottom.png"><img loading="lazy" src="after/work-koukouvagia-villa-bottom.png" alt="/work/koukouvagia-villa bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/makai-beach-bar</summary><div class="screens">
+<figure><a href="after/work-makai-beach-bar-top.png"><img loading="lazy" src="after/work-makai-beach-bar-top.png" alt="/work/makai-beach-bar top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-makai-beach-bar-middle.png"><img loading="lazy" src="after/work-makai-beach-bar-middle.png" alt="/work/makai-beach-bar middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-makai-beach-bar-bottom.png"><img loading="lazy" src="after/work-makai-beach-bar-bottom.png" alt="/work/makai-beach-bar bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/marpesa</summary><div class="screens">
+<figure><a href="after/work-marpesa-top.png"><img loading="lazy" src="after/work-marpesa-top.png" alt="/work/marpesa top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-marpesa-middle.png"><img loading="lazy" src="after/work-marpesa-middle.png" alt="/work/marpesa middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-marpesa-bottom.png"><img loading="lazy" src="after/work-marpesa-bottom.png" alt="/work/marpesa bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/mayamor-villas</summary><div class="screens">
+<figure><a href="after/work-mayamor-villas-top.png"><img loading="lazy" src="after/work-mayamor-villas-top.png" alt="/work/mayamor-villas top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-mayamor-villas-middle.png"><img loading="lazy" src="after/work-mayamor-villas-middle.png" alt="/work/mayamor-villas middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-mayamor-villas-bottom.png"><img loading="lazy" src="after/work-mayamor-villas-bottom.png" alt="/work/mayamor-villas bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/michaella-connor</summary><div class="screens">
+<figure><a href="after/work-michaella-connor-top.png"><img loading="lazy" src="after/work-michaella-connor-top.png" alt="/work/michaella-connor top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-michaella-connor-middle.png"><img loading="lazy" src="after/work-michaella-connor-middle.png" alt="/work/michaella-connor middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-michaella-connor-bottom.png"><img loading="lazy" src="after/work-michaella-connor-bottom.png" alt="/work/michaella-connor bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/nikos-basia</summary><div class="screens">
+<figure><a href="after/work-nikos-basia-top.png"><img loading="lazy" src="after/work-nikos-basia-top.png" alt="/work/nikos-basia top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-basia-middle.png"><img loading="lazy" src="after/work-nikos-basia-middle.png" alt="/work/nikos-basia middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-basia-bottom.png"><img loading="lazy" src="after/work-nikos-basia-bottom.png" alt="/work/nikos-basia bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/nikos-danai</summary><div class="screens">
+<figure><a href="after/work-nikos-danai-top.png"><img loading="lazy" src="after/work-nikos-danai-top.png" alt="/work/nikos-danai top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-danai-middle.png"><img loading="lazy" src="after/work-nikos-danai-middle.png" alt="/work/nikos-danai middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-danai-bottom.png"><img loading="lazy" src="after/work-nikos-danai-bottom.png" alt="/work/nikos-danai bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/nikos-lenia</summary><div class="screens">
+<figure><a href="after/work-nikos-lenia-top.png"><img loading="lazy" src="after/work-nikos-lenia-top.png" alt="/work/nikos-lenia top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-lenia-middle.png"><img loading="lazy" src="after/work-nikos-lenia-middle.png" alt="/work/nikos-lenia middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-nikos-lenia-bottom.png"><img loading="lazy" src="after/work-nikos-lenia-bottom.png" alt="/work/nikos-lenia bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/olea-all-suite-hotel</summary><div class="screens">
+<figure><a href="after/work-olea-all-suite-hotel-top.png"><img loading="lazy" src="after/work-olea-all-suite-hotel-top.png" alt="/work/olea-all-suite-hotel top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-olea-all-suite-hotel-middle.png"><img loading="lazy" src="after/work-olea-all-suite-hotel-middle.png" alt="/work/olea-all-suite-hotel middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-olea-all-suite-hotel-bottom.png"><img loading="lazy" src="after/work-olea-all-suite-hotel-bottom.png" alt="/work/olea-all-suite-hotel bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/orizontes</summary><div class="screens">
+<figure><a href="after/work-orizontes-top.png"><img loading="lazy" src="after/work-orizontes-top.png" alt="/work/orizontes top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-orizontes-middle.png"><img loading="lazy" src="after/work-orizontes-middle.png" alt="/work/orizontes middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-orizontes-bottom.png"><img loading="lazy" src="after/work-orizontes-bottom.png" alt="/work/orizontes bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/panagiotis-despoina</summary><div class="screens">
+<figure><a href="after/work-panagiotis-despoina-top.png"><img loading="lazy" src="after/work-panagiotis-despoina-top.png" alt="/work/panagiotis-despoina top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-panagiotis-despoina-middle.png"><img loading="lazy" src="after/work-panagiotis-despoina-middle.png" alt="/work/panagiotis-despoina middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-panagiotis-despoina-bottom.png"><img loading="lazy" src="after/work-panagiotis-despoina-bottom.png" alt="/work/panagiotis-despoina bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/panagiotis-penny</summary><div class="screens">
+<figure><a href="after/work-panagiotis-penny-top.png"><img loading="lazy" src="after/work-panagiotis-penny-top.png" alt="/work/panagiotis-penny top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-panagiotis-penny-middle.png"><img loading="lazy" src="after/work-panagiotis-penny-middle.png" alt="/work/panagiotis-penny middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-panagiotis-penny-bottom.png"><img loading="lazy" src="after/work-panagiotis-penny-bottom.png" alt="/work/panagiotis-penny bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/phoenix-beach-hotel</summary><div class="screens">
+<figure><a href="after/work-phoenix-beach-hotel-top.png"><img loading="lazy" src="after/work-phoenix-beach-hotel-top.png" alt="/work/phoenix-beach-hotel top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-phoenix-beach-hotel-middle.png"><img loading="lazy" src="after/work-phoenix-beach-hotel-middle.png" alt="/work/phoenix-beach-hotel middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-phoenix-beach-hotel-bottom.png"><img loading="lazy" src="after/work-phoenix-beach-hotel-bottom.png" alt="/work/phoenix-beach-hotel bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/sophie-dara</summary><div class="screens">
+<figure><a href="after/work-sophie-dara-top.png"><img loading="lazy" src="after/work-sophie-dara-top.png" alt="/work/sophie-dara top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-sophie-dara-middle.png"><img loading="lazy" src="after/work-sophie-dara-middle.png" alt="/work/sophie-dara middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-sophie-dara-bottom.png"><img loading="lazy" src="after/work-sophie-dara-bottom.png" alt="/work/sophie-dara bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/stathis-maria</summary><div class="screens">
+<figure><a href="after/work-stathis-maria-top.png"><img loading="lazy" src="after/work-stathis-maria-top.png" alt="/work/stathis-maria top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-stathis-maria-middle.png"><img loading="lazy" src="after/work-stathis-maria-middle.png" alt="/work/stathis-maria middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-stathis-maria-bottom.png"><img loading="lazy" src="after/work-stathis-maria-bottom.png" alt="/work/stathis-maria bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/stjohn-resort-villas-suites</summary><div class="screens">
+<figure><a href="after/work-stjohn-resort-villas-suites-top.png"><img loading="lazy" src="after/work-stjohn-resort-villas-suites-top.png" alt="/work/stjohn-resort-villas-suites top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-stjohn-resort-villas-suites-middle.png"><img loading="lazy" src="after/work-stjohn-resort-villas-suites-middle.png" alt="/work/stjohn-resort-villas-suites middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-stjohn-resort-villas-suites-bottom.png"><img loading="lazy" src="after/work-stjohn-resort-villas-suites-bottom.png" alt="/work/stjohn-resort-villas-suites bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/the-halfway-house-restaurant-wine-bar</summary><div class="screens">
+<figure><a href="after/work-the-halfway-house-restaurant-wine-bar-top.png"><img loading="lazy" src="after/work-the-halfway-house-restaurant-wine-bar-top.png" alt="/work/the-halfway-house-restaurant-wine-bar top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-the-halfway-house-restaurant-wine-bar-middle.png"><img loading="lazy" src="after/work-the-halfway-house-restaurant-wine-bar-middle.png" alt="/work/the-halfway-house-restaurant-wine-bar middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-the-halfway-house-restaurant-wine-bar-bottom.png"><img loading="lazy" src="after/work-the-halfway-house-restaurant-wine-bar-bottom.png" alt="/work/the-halfway-house-restaurant-wine-bar bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/tzante-hotel</summary><div class="screens">
+<figure><a href="after/work-tzante-hotel-top.png"><img loading="lazy" src="after/work-tzante-hotel-top.png" alt="/work/tzante-hotel top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-tzante-hotel-middle.png"><img loading="lazy" src="after/work-tzante-hotel-middle.png" alt="/work/tzante-hotel middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-tzante-hotel-bottom.png"><img loading="lazy" src="after/work-tzante-hotel-bottom.png" alt="/work/tzante-hotel bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/xaralampos-katerina</summary><div class="screens">
+<figure><a href="after/work-xaralampos-katerina-top.png"><img loading="lazy" src="after/work-xaralampos-katerina-top.png" alt="/work/xaralampos-katerina top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-xaralampos-katerina-middle.png"><img loading="lazy" src="after/work-xaralampos-katerina-middle.png" alt="/work/xaralampos-katerina middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-xaralampos-katerina-bottom.png"><img loading="lazy" src="after/work-xaralampos-katerina-bottom.png" alt="/work/xaralampos-katerina bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/yiayia-maria</summary><div class="screens">
+<figure><a href="after/work-yiayia-maria-top.png"><img loading="lazy" src="after/work-yiayia-maria-top.png" alt="/work/yiayia-maria top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-yiayia-maria-middle.png"><img loading="lazy" src="after/work-yiayia-maria-middle.png" alt="/work/yiayia-maria middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-yiayia-maria-bottom.png"><img loading="lazy" src="after/work-yiayia-maria-bottom.png" alt="/work/yiayia-maria bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/zakynthos-greece</summary><div class="screens">
+<figure><a href="after/work-zakynthos-greece-top.png"><img loading="lazy" src="after/work-zakynthos-greece-top.png" alt="/work/zakynthos-greece top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-zakynthos-greece-middle.png"><img loading="lazy" src="after/work-zakynthos-greece-middle.png" alt="/work/zakynthos-greece middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-zakynthos-greece-bottom.png"><img loading="lazy" src="after/work-zakynthos-greece-bottom.png" alt="/work/zakynthos-greece bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/work/zakynthos-videos</summary><div class="screens">
+<figure><a href="after/work-zakynthos-videos-top.png"><img loading="lazy" src="after/work-zakynthos-videos-top.png" alt="/work/zakynthos-videos top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-zakynthos-videos-middle.png"><img loading="lazy" src="after/work-zakynthos-videos-middle.png" alt="/work/zakynthos-videos middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/work-zakynthos-videos-bottom.png"><img loading="lazy" src="after/work-zakynthos-videos-bottom.png" alt="/work/zakynthos-videos bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+<details><summary>/works</summary><div class="screens">
+<figure><a href="after/works-top.png"><img loading="lazy" src="after/works-top.png" alt="/works top"></a><figcaption>Top ? 390 ? 844</figcaption></figure>
+<figure><a href="after/works-middle.png"><img loading="lazy" src="after/works-middle.png" alt="/works middle"></a><figcaption>Middle ? 390 ? 844</figcaption></figure>
+<figure><a href="after/works-bottom.png"><img loading="lazy" src="after/works-bottom.png" alt="/works bottom"></a><figcaption>Bottom ? 390 ? 844</figcaption></figure>
+</div></details>
+</section><h2>Private booking states</h2><div class="screens">
+<figure><a href="after/booking-pending.png"><img loading="lazy" src="after/booking-pending.png" alt="Synthetic booking pending"></a><figcaption>Pending ? synthetic browser data</figcaption></figure>
+<figure><a href="after/booking-approved.png"><img loading="lazy" src="after/booking-approved.png" alt="Synthetic booking approved"></a><figcaption>Approved ? synthetic browser data</figcaption></figure>
+<figure><a href="after/booking-paid.png"><img loading="lazy" src="after/booking-paid.png" alt="Synthetic booking paid"></a><figcaption>Paid ? synthetic browser data</figcaption></figure>
+</div><h2>Studio workspace</h2><div class="screens">
+<figure><a href="after/dashboard/dashboard-mobile-details-320.png"><img loading="lazy" src="after/dashboard/dashboard-mobile-details-320.png" alt="dashboard-mobile-details-320"></a><figcaption>dashboard-mobile-details-320</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-availability-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-availability-390.png" alt="dashboard-standard-availability-390"></a><figcaption>dashboard-standard-availability-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-bookings-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-bookings-390.png" alt="dashboard-standard-bookings-390"></a><figcaption>dashboard-standard-bookings-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-clients-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-clients-390.png" alt="dashboard-standard-clients-390"></a><figcaption>dashboard-standard-clients-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-data-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-data-390.png" alt="dashboard-standard-data-390"></a><figcaption>dashboard-standard-data-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-media-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-media-390.png" alt="dashboard-standard-media-390"></a><figcaption>dashboard-standard-media-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-notifications-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-notifications-390.png" alt="dashboard-standard-notifications-390"></a><figcaption>dashboard-standard-notifications-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-pages-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-pages-390.png" alt="dashboard-standard-pages-390"></a><figcaption>dashboard-standard-pages-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-payments-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-payments-390.png" alt="dashboard-standard-payments-390"></a><figcaption>dashboard-standard-payments-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-portfolio-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-portfolio-390.png" alt="dashboard-standard-portfolio-390"></a><figcaption>dashboard-standard-portfolio-390</figcaption></figure>
+<figure><a href="after/dashboard/dashboard-standard-settings-390.png"><img loading="lazy" src="after/dashboard/dashboard-standard-settings-390.png" alt="dashboard-standard-settings-390"></a><figcaption>dashboard-standard-settings-390</figcaption></figure>
+</div><h2>Live reference captures</h2><p><a href="https://thomasmamfredas.com/">Thomas Mamfredas</a> ? external content may load or animate after capture.</p><div class="screens">
+<figure><a href="before/reference-commercial-top.png"><img loading="lazy" src="before/reference-commercial-top.png" alt="reference-commercial-top"></a><figcaption>reference-commercial-top</figcaption></figure>
+<figure><a href="before/reference-contact-top.png"><img loading="lazy" src="before/reference-contact-top.png" alt="reference-contact-top"></a><figcaption>reference-contact-top</figcaption></figure>
+<figure><a href="before/reference-index-top.png"><img loading="lazy" src="before/reference-index-top.png" alt="reference-index-top"></a><figcaption>reference-index-top</figcaption></figure>
+<figure><a href="before/reference-stories-top.png"><img loading="lazy" src="before/reference-stories-top.png" alt="reference-stories-top"></a><figcaption>reference-stories-top</figcaption></figure>
+<figure><a href="before/reference-weddings-top.png"><img loading="lazy" src="before/reference-weddings-top.png" alt="reference-weddings-top"></a><figcaption>reference-weddings-top</figcaption></figure>
+<figure><a href="before/reference-works-top.png"><img loading="lazy" src="before/reference-works-top.png" alt="reference-works-top"></a><figcaption>reference-works-top</figcaption></figure>
+</div><script>document.getElementById("search").addEventListener("input",e=>{for(const row of document.querySelectorAll("#routes details"))row.hidden=!row.querySelector("summary").textContent.toLowerCase().includes(e.target.value.toLowerCase())})</script></html>

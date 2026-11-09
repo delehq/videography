@@ -22,15 +22,15 @@ export function WorkPreview({selection,onClose}:{selection:PreviewSelection;onCl
     background.forEach(el=>el.inert=true);document.body.style.overflow='hidden';
     root.current?.querySelector<HTMLButtonElement>('button')?.focus();
     const destination=media.current!.getBoundingClientRect();
-    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const compact=matchMedia('(max-width: 991px), (pointer: coarse)').matches;
     const tl=gsap.timeline({onReverseComplete:onClose});
-    tl.fromTo(root.current!.querySelector('.work-preview-shade'),{backgroundColor:'rgba(0,0,0,0)',backdropFilter:'blur(0px)'},{backgroundColor:'rgba(0,0,0,.82)',backdropFilter:'blur(6px) saturate(115%)',duration:reduced?.1:.32},0)
-      .fromTo(media.current,{x:selection.origin.left-destination.left,y:selection.origin.top-destination.top,scaleX:selection.origin.width/destination.width,scaleY:selection.origin.height/destination.height,transformOrigin:'0 0'},{x:0,y:0,scaleX:1,scaleY:1,duration:reduced?.1:.66,ease:'power2.inOut'},0)
-      .fromTo(root.current!.querySelector('.work-preview-info'),{opacity:0,y:reduced?0:10},{opacity:1,y:0,duration:.25},reduced?0:.45);
+    tl.fromTo(root.current!.querySelector('.work-preview-shade'),{backgroundColor:'rgba(0,0,0,0)',backdropFilter:'blur(0px)'},{backgroundColor:'rgba(0,0,0,.82)',backdropFilter:compact?'none':'blur(6px) saturate(115%)',duration:reduced?.1:compact?.18:.32},0)
+      .fromTo(media.current,{x:selection.origin.left-destination.left,y:selection.origin.top-destination.top,scaleX:selection.origin.width/destination.width,scaleY:selection.origin.height/destination.height,transformOrigin:'0 0'},{x:0,y:0,scaleX:1,scaleY:1,duration:reduced?.1:compact?.28:.66,ease:'power2.inOut'},0)
+      .fromTo(root.current!.querySelector('.work-preview-info'),{opacity:0,y:reduced?0:10},{opacity:1,y:0,duration:compact?.18:.25},reduced?0:compact?.1:.45);
     animation.current=tl;
     return()=>{tl.kill();background.forEach(el=>el.inert=false);document.body.style.overflow=previousOverflow;selection.trigger?.focus();};
   },[]);
-  return createPortal(<div ref={root} className="work-preview" role="dialog" aria-modal="true" aria-label={`${p.title} preview`} onKeyDown={e=>{
+  return createPortal(<div ref={root} className="work-preview" data-lenis-prevent role="dialog" aria-modal="true" aria-label={`${p.title} preview`} onKeyDown={e=>{
     if(e.key==='Escape')close();
     if(e.key==='Tab'){const items=[...root.current!.querySelectorAll<HTMLElement>('button,a')];const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
   }}>

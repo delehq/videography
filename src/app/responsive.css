@@ -1,0 +1,137 @@
+/* Final responsive layer: keep the reference composition on desktop while
+   allowing real content and native page scrolling on smaller screens. */
+.cloud-touch-hint { display: none; }
+.desktop-nav a[aria-current="page"], .mobile-work[aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+@media (pointer: coarse) {
+  .cloud-touch-hint { display: inline; }
+  .cloud-pointer-hint { display: none; }
+}
+@media (max-width: 991px) {
+  .site-header { padding: 12px 20px; height: 74px; background: var(--bg); }
+  .site-header .mobile-work,
+  .site-header .wordmark,
+  .desktop-nav button { min-height: 44px; display: inline-flex; align-items: center; }
+  .site-header .wordmark { justify-content: center; min-width: 64px; }
+  .desktop-nav button { padding: 10px 0 10px 12px; }
+  .menu-panel { overscroll-behavior: contain; transition-duration: .3s; }
+  .menu-top button { min-height: 44px; }
+  .menu-panel nav { gap: 10px; padding: 32px 0; }
+  .menu-panel nav a { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; min-height: 44px; font-size: clamp(22px, 4.8vw, 38px); line-height: 1.2; letter-spacing: 0; }
+  .menu-current { font-size: 12px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .menu-panel nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+  .menu-panel sup { margin-top: 0; font-size: 12px; }
+  .menu-bottom { flex-wrap: wrap; gap: 16px; padding-bottom: 16px; }
+  .menu-bottom a { min-height: 44px; }
+  .service-roll { height: auto; min-height: 0; overflow: visible; }
+  .service-roll > .reference-two-col { display: flex; flex-direction: column-reverse; height: auto; min-height: 0; padding: 90px 20px 70px; gap: 32px; }
+  .service-roll-copy { width: 100%; padding: 0; }
+  .service-roll-copy h2 { font-size: clamp(36px, 8vw, 60px); text-align: left; overflow-wrap: anywhere; }
+  .service-roll-copy .reference-label { text-align: left; }
+  .service-roll-viewport { width: 100%; height: auto; overflow: visible; }
+  .service-roll-track { gap: 20px; }
+  .service-roll-space { display: none; }
+  .booking-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-top: 120px; }
+  .booking-layout aside img { display: none; }
+  .booking-layout aside h1 { font-size: clamp(38px, 7vw, 64px); }
+  .booking-layout aside > p { margin-top: 24px; }
+  .booking-layout small { margin-top: 24px; max-width: 100%; }
+  .booking-content, .booking-layout aside { min-width: 0; }
+  .service-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-fullscreen, .cloud-hd { width: 44px; height: 44px; }
+  .project-viewer-close { min-width: 44px; min-height: 44px; }
+  .project-viewer-navigation button { min-width: 44px; min-height: 44px; }
+  .project-viewer-navigation { bottom: max(16px, env(safe-area-inset-bottom)); }
+  .work-preview { padding: 72px 20px 32px; overflow-y: auto; overscroll-behavior: contain; }
+  .work-preview-stage { grid-template-columns: minmax(0, 1fr); gap: 24px; margin: auto; }
+  .work-preview-info { min-width: 0; }
+  .work-preview-info h2 { overflow-wrap: anywhere; }
+  .work-preview-info a { min-height: 44px; }
+  .footer { height: auto; min-height: 100svh; padding-bottom: 70px; }
+  .footer-copy { min-width: 0; }
+  .footer-links a, .contact-unconfigured { font-size: clamp(23px, 5.9vw, 33px); max-width: 100%; overflow-wrap: anywhere; }
+  .footer-links a { min-height: 44px; }
+  .footer small { overflow-wrap: anywhere; }
+  .booking-content input, .booking-content textarea, .booking-content select { min-width: 0; max-width: 100%; font-size: 16px; }
+  .request-summary { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+  .request-summary strong { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 767px) {
+  html { scroll-padding-top: 90px; }
+  .hero.scroll-panel, .reference-stack .service-hero,
+  .project-detail.scroll-panel { height: 100svh; min-height: 620px; }
+  .hero-bottom { display: block; left: 20px; right: 20px; bottom: 90px; }
+  .hero-bottom p { text-align: left; margin-top: 24px; max-width: 29ch; }
+  .service-hero-content { display: block; inset: auto 20px 90px; }
+  .service-hero-content p { text-align: left; margin-top: 24px; max-width: 32ch; }
+  .reference-stack .service-hero h1 { font-size: clamp(32px, 9vw, 60px); overflow-wrap: anywhere; }
+  .service-fullscreen { bottom: 20px; left: 20px; min-width: 44px; min-height: 44px; }
+  .about > .panel-surface { width: auto; padding: 90px 20px 70px; }
+  .about-top, .about-editorial { grid-template-columns: minmax(0, 1fr); }
+  .about h2 { font-size: clamp(38px, 12vw, 63px); overflow-wrap: anywhere; }
+  .about-editorial { gap: 24px; }
+  .film-interlude.scroll-panel { display: none; }
+  .light-interlude.scroll-panel { display: none; }
+  .photo-universe.scroll-panel { height: auto; min-height: 0; }
+  .photo-universe > .panel-surface { height: auto; }
+  .photo-universe .cloud-copy { position: relative; top: auto; left: auto; padding: 60px 20px 24px; max-width: none; mix-blend-mode: normal; }
+  .photo-universe .cloud-copy p { max-width: 45ch; font-weight: 400; text-transform: none; line-height: 1.6; }
+  .photo-universe .cloud-copy small { margin-top: 20px; font-size: 14px; }
+  .photo-universe .photo-cloud { position: relative; inset: auto; height: clamp(400px, 65svh, 620px); }
+  .hero-media { will-change: transform; }
+  .hero[data-mobile-motion] .hero-shade { background: linear-gradient(0deg, #000c, #0002 65%); }
+  .work-heading { max-width: 100%; font-size: clamp(28px, 7.8vw, 46px); gap: 10px; }
+  .work-heading svg { width: 28px; height: 28px; margin-top: 0; }
+  .work-board { grid-template-columns: minmax(0, 1fr); }
+  .work-table { padding-top: 0; }
+  .work-row:not(.table-head) { min-height: 44px; align-items: center; }
+  .project-preview { min-height: 0; aspect-ratio: 4/3; }
+  .selected-work > .panel-surface { padding: 80px 20px; }
+  .reference-copy h1, .reference-copy h2 { font-size: clamp(32px, 10vw, 46px); overflow-wrap: anywhere; }
+  .story-panel, .story-panel > .reference-two-col { min-height: 0; }
+  .story-panel > .reference-two-col { padding: 100px 20px 60px; gap: 24px; }
+  .stories-stack .reference-copy { padding: 0; }
+  .footer { height: auto; min-height: 100svh; padding-bottom: 70px; }
+  .footer-editorial { padding: 80px 20px 70px; }
+  .footer h2 { font-size: clamp(36px, 10vw, 46px); }
+  .footer-copy { padding-right: 0; }
+  .footer-editorial .footer-copy { padding: 0; }
+  .collection { padding: 100px 20px 50px; }
+  .collection .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; gap: 16px; }
+  .collection .project-caption h2 { font-size: 16px; line-height: 1.3; }
+  .collection .project-caption span { font-size: 12px; letter-spacing: .06em; }
+  .project-description:empty { display: none; }
+  .project-intro-panel, .project-gallery-panel > .project-gallery { min-height: 0; }
+  .project-intro-grid { min-height: 0; }
+  .project-detail h1 { font-size: clamp(30px, 9vw, 43px); overflow-wrap: anywhere; }
+  .project-intro-grid { padding: 70px 20px; gap: 28px; }
+  .text-link, .scroll-cue, .back-button { min-height: 44px; }
+  .scroll-cue { display: flex; align-items: center; min-width: 44px; }
+  .form-actions { flex-wrap: wrap; gap: 16px; }
+  .solid-button { max-width: 100%; }
+}
+
+@media (max-width: 479px) {
+  .collection .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .collection .project-caption { padding: 32px 16px 16px; }
+  .collection .project-caption h2 { font-size: 18px; }
+  .collection .project-caption span { font-size: 14px; }
+  .service-options { grid-template-columns: minmax(0, 1fr); }
+  .service-options button { min-height: 130px; }
+  .booking-steps { gap: 8px; }
+  .booking-steps > span { min-width: 0; font-size: 14px; }
+  .calendar-toolbar { gap: 8px; }
+  .calendar-toolbar strong { text-align: center; }
+  .availability-grid { gap: 2px; }
+}
+
+@media (max-height: 540px) and (max-width: 991px) {
+  .menu-panel nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; padding: 12px 0; }
+  .menu-panel nav a { font-size: 20px; }
+  .menu-panel sup { display: none; }
+  .menu-current { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media { will-change: auto; }
+}

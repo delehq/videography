@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {useEffect, useRef,useMemo} from 'react';
+import {useEffect, useRef,useMemo,useState} from 'react';
 import * as THREE from 'three';
 import {SiteImage,useSiteProjects,useProjectPlacement} from './site-content';
 
@@ -20,12 +20,13 @@ gl_FragColor=vec4(texture2D(uMap,r).r,texture2D(uMap,g).g,texture2D(uMap,b).b,1.
 export function FilmRoll() {
  const left=useProjectPlacement('footerLeft'),right=useProjectPlacement('footerRight');const columns=useMemo(()=>[left,right],[left,right]);
   const root = useRef<HTMLDivElement>(null);
+  const [interactive,setInteractive]=useState(false);
+  useEffect(()=>{const query=matchMedia('(min-width: 992px) and (prefers-reduced-motion: no-preference)');const update=()=>setInteractive(query.matches);update();query.addEventListener('change',update);return()=>query.removeEventListener('change',update)},[]);
   useEffect(() => {
     const el = root.current;
     const section = el?.closest<HTMLElement>('.footer');
     if (!el || !section) return;
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    if (reduced.matches) return;
+    if (!interactive) return;
     const tracks = [...el.querySelectorAll<HTMLElement>('.film-track')];
     let target = 0, current = 0, reverseTravel = 0, released = false;
     let active = false, alive = true, frame = 0, touchY = 0;
@@ -193,7 +194,7 @@ export function FilmRoll() {
       textures.forEach(t=>t.dispose());renderer?.dispose();renderer?.domElement.remove();
       if(previousTabIndex===null)section.removeAttribute('tabindex');else section.setAttribute('tabindex',previousTabIndex);
     };
-  }, [columns]);
+  }, [columns,interactive]);
 
   return <div className="film-roll" ref={root} aria-label="Explore films. Scroll or drag; select a film to view the project.">
     {columns.map((items,col)=><div className="film-column" key={col}><div className="film-track" data-direction={col===0?-1:1}>

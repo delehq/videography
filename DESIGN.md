@@ -245,6 +245,19 @@ The portal-based film viewer permits keyboard access to native video controls an
 - **Don't** make motion or pointer-only exploration the sole route to project content.
 
 
+## Mobile navigation and motion
+
+Desktop and mobile navigation share the same eight labels and destinations in
+`site-shell.tsx`. The compact header exposes Works, the monogram and Menu; the
+full menu includes pricing and booking, marks the current page and restores
+focus when closed. Mobile visitors use native scrolling and skip the blocking
+loader. The index hero has one restrained scroll-linked camera movement;
+photo-cloud copy sits above the gallery, and empty transition panels are
+omitted. Cloud graphics initialize near the viewport with a compact rendering
+budget. Fullscreen transitions are shorter on touch devices without animated
+backdrop blur. `src/app/responsive.css` is the final responsive layer. Detailed
+coverage and screenshots are linked in `docs/MOBILE-UX-AUDIT.md`.
+
 ## Dashboard administration surface
 
 Mode: Operate. The dashboard uses a conventional white workspace over a cool light background, with blue primary actions and restrained semantic status colors. These decisions apply to studio administration only. The public portfolio retains its cinematic reference design.

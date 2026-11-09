@@ -1,0 +1,374 @@
+{
+  "public_routes": 46,
+  "mobile_scroll_checks": 276,
+  "screens": [
+    {
+      "capture": "book",
+      "screens": [
+        "book-top.png",
+        "book-middle.png",
+        "book-bottom.png"
+      ]
+    },
+    {
+      "capture": "booking-mobile-review-return",
+      "screens": [
+        "booking-mobile-review-return-top.png",
+        "booking-mobile-review-return-middle.png",
+        "booking-mobile-review-return-bottom.png"
+      ]
+    },
+    {
+      "capture": "booking-mobile-review",
+      "screens": [
+        "booking-mobile-review-top.png",
+        "booking-mobile-review-middle.png",
+        "booking-mobile-review-bottom.png"
+      ]
+    },
+    {
+      "capture": "commercial",
+      "screens": [
+        "commercial-top.png",
+        "commercial-middle.png",
+        "commercial-bottom.png"
+      ]
+    },
+    {
+      "capture": "contact",
+      "screens": [
+        "contact-top.png",
+        "contact-middle.png",
+        "contact-bottom.png"
+      ]
+    },
+    {
+      "capture": "forgot-password",
+      "screens": [
+        "forgot-password-top.png",
+        "forgot-password-middle.png",
+        "forgot-password-bottom.png"
+      ]
+    },
+    {
+      "capture": "index",
+      "screens": [
+        "index-top.png",
+        "index-middle.png",
+        "index-bottom.png"
+      ]
+    },
+    {
+      "capture": "login",
+      "screens": [
+        "login-top.png",
+        "login-middle.png",
+        "login-bottom.png"
+      ]
+    },
+    {
+      "capture": "pricing",
+      "screens": [
+        "pricing-top.png",
+        "pricing-middle.png",
+        "pricing-bottom.png"
+      ]
+    },
+    {
+      "capture": "reset-password",
+      "screens": [
+        "reset-password-top.png",
+        "reset-password-middle.png",
+        "reset-password-bottom.png"
+      ]
+    },
+    {
+      "capture": "stories",
+      "screens": [
+        "stories-top.png",
+        "stories-middle.png",
+        "stories-bottom.png"
+      ]
+    },
+    {
+      "capture": "weddings",
+      "screens": [
+        "weddings-top.png",
+        "weddings-middle.png",
+        "weddings-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-alamis-hotel-and-apartments",
+      "screens": [
+        "work-alamis-hotel-and-apartments-top.png",
+        "work-alamis-hotel-and-apartments-middle.png",
+        "work-alamis-hotel-and-apartments-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-basilis-maria",
+      "screens": [
+        "work-basilis-maria-top.png",
+        "work-basilis-maria-middle.png",
+        "work-basilis-maria-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-caratos",
+      "screens": [
+        "work-caratos-top.png",
+        "work-caratos-middle.png",
+        "work-caratos-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-danni-lotte",
+      "screens": [
+        "work-danni-lotte-top.png",
+        "work-danni-lotte-middle.png",
+        "work-danni-lotte-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-dimitris-eygenia",
+      "screens": [
+        "work-dimitris-eygenia-top.png",
+        "work-dimitris-eygenia-middle.png",
+        "work-dimitris-eygenia-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-golden-coast",
+      "screens": [
+        "work-golden-coast-top.png",
+        "work-golden-coast-middle.png",
+        "work-golden-coast-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-hamsa",
+      "screens": [
+        "work-hamsa-top.png",
+        "work-hamsa-middle.png",
+        "work-hamsa-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-iakobos-dionysia",
+      "screens": [
+        "work-iakobos-dionysia-top.png",
+        "work-iakobos-dionysia-middle.png",
+        "work-iakobos-dionysia-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-ionian-aura",
+      "screens": [
+        "work-ionian-aura-top.png",
+        "work-ionian-aura-middle.png",
+        "work-ionian-aura-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-iskios-suites",
+      "screens": [
+        "work-iskios-suites-top.png",
+        "work-iskios-suites-middle.png",
+        "work-iskios-suites-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-its-time",
+      "screens": [
+        "work-its-time-top.png",
+        "work-its-time-middle.png",
+        "work-its-time-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-koukouvagia-villa",
+      "screens": [
+        "work-koukouvagia-villa-top.png",
+        "work-koukouvagia-villa-middle.png",
+        "work-koukouvagia-villa-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-makai-beach-bar",
+      "screens": [
+        "work-makai-beach-bar-top.png",
+        "work-makai-beach-bar-middle.png",
+        "work-makai-beach-bar-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-marpesa",
+      "screens": [
+        "work-marpesa-top.png",
+        "work-marpesa-middle.png",
+        "work-marpesa-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-mayamor-villas",
+      "screens": [
+        "work-mayamor-villas-top.png",
+        "work-mayamor-villas-middle.png",
+        "work-mayamor-villas-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-michaella-connor",
+      "screens": [
+        "work-michaella-connor-top.png",
+        "work-michaella-connor-middle.png",
+        "work-michaella-connor-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-nikos-basia",
+      "screens": [
+        "work-nikos-basia-top.png",
+        "work-nikos-basia-middle.png",
+        "work-nikos-basia-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-nikos-danai",
+      "screens": [
+        "work-nikos-danai-top.png",
+        "work-nikos-danai-middle.png",
+        "work-nikos-danai-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-nikos-lenia",
+      "screens": [
+        "work-nikos-lenia-top.png",
+        "work-nikos-lenia-middle.png",
+        "work-nikos-lenia-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-olea-all-suite-hotel",
+      "screens": [
+        "work-olea-all-suite-hotel-top.png",
+        "work-olea-all-suite-hotel-middle.png",
+        "work-olea-all-suite-hotel-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-orizontes",
+      "screens": [
+        "work-orizontes-top.png",
+        "work-orizontes-middle.png",
+        "work-orizontes-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-panagiotis-despoina",
+      "screens": [
+        "work-panagiotis-despoina-top.png",
+        "work-panagiotis-despoina-middle.png",
+        "work-panagiotis-despoina-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-panagiotis-penny",
+      "screens": [
+        "work-panagiotis-penny-top.png",
+        "work-panagiotis-penny-middle.png",
+        "work-panagiotis-penny-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-phoenix-beach-hotel",
+      "screens": [
+        "work-phoenix-beach-hotel-top.png",
+        "work-phoenix-beach-hotel-middle.png",
+        "work-phoenix-beach-hotel-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-sophie-dara",
+      "screens": [
+        "work-sophie-dara-top.png",
+        "work-sophie-dara-middle.png",
+        "work-sophie-dara-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-stathis-maria",
+      "screens": [
+        "work-stathis-maria-top.png",
+        "work-stathis-maria-middle.png",
+        "work-stathis-maria-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-stjohn-resort-villas-suites",
+      "screens": [
+        "work-stjohn-resort-villas-suites-top.png",
+        "work-stjohn-resort-villas-suites-middle.png",
+        "work-stjohn-resort-villas-suites-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-the-halfway-house-restaurant-wine-bar",
+      "screens": [
+        "work-the-halfway-house-restaurant-wine-bar-top.png",
+        "work-the-halfway-house-restaurant-wine-bar-middle.png",
+        "work-the-halfway-house-restaurant-wine-bar-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-tzante-hotel",
+      "screens": [
+        "work-tzante-hotel-top.png",
+        "work-tzante-hotel-middle.png",
+        "work-tzante-hotel-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-xaralampos-katerina",
+      "screens": [
+        "work-xaralampos-katerina-top.png",
+        "work-xaralampos-katerina-middle.png",
+        "work-xaralampos-katerina-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-yiayia-maria",
+      "screens": [
+        "work-yiayia-maria-top.png",
+        "work-yiayia-maria-middle.png",
+        "work-yiayia-maria-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-zakynthos-greece",
+      "screens": [
+        "work-zakynthos-greece-top.png",
+        "work-zakynthos-greece-middle.png",
+        "work-zakynthos-greece-bottom.png"
+      ]
+    },
+    {
+      "capture": "work-zakynthos-videos",
+      "screens": [
+        "work-zakynthos-videos-top.png",
+        "work-zakynthos-videos-middle.png",
+        "work-zakynthos-videos-bottom.png"
+      ]
+    },
+    {
+      "capture": "works",
+      "screens": [
+        "works-top.png",
+        "works-middle.png",
+        "works-bottom.png"
+      ]
+    }
+  ]
+}
